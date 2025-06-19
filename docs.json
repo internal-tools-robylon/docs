@@ -60,7 +60,9 @@
           {
             "group": "Integrations",
             "pages": [
-              "integrations/bubble"
+              "integrations/bubble",
+              "integrations/framer",
+              "integrations/Webflow"
             ]
           }
         ]
