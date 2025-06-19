@@ -62,7 +62,7 @@
             "pages": [
               "integrations/bubble",
               "integrations/framer",
-              "integrations/Webflow"
+              "integrations/webflow"
             ]
           }
         ]
