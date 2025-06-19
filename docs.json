@@ -35,16 +35,21 @@
         ]
       },
       {
-        "tab": "Integrations",
+        "tab": "API Reference",
         "groups": [
           {
-            "group": "Integrations",
+            "group": "API Documentation",
             "pages": [
-              "integrations/bubble",
-              "integrations/framer",
-              "integrations/webflow",
-              "integrations/wix",
-              "integrations/wordpress"
+              "api-reference/introduction"
+            ]
+          },
+          {
+            "group": "Endpoint Examples",
+            "pages": [
+              "api-reference/endpoint/get",
+              "api-reference/endpoint/create",
+              "api-reference/endpoint/delete",
+              "api-reference/endpoint/webhook"
             ]
           }
         ]
