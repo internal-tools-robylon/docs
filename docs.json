@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Robylon",
   "colors": {
-    "primary": "#031225",
-    "dark": "#4c6380",
-    "light": "#1d2939"
+    "primary": "#155eef",
+    "dark": "#0f1e30",
+    "light": "#cad8e6"
   },
   "favicon": "/favicon.png",
   "navigation": {
