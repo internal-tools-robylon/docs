@@ -4,8 +4,8 @@
   "name": "Robylon",
   "colors": {
     "primary": "#155eef",
-    "dark": "#0f1e30",
-    "light": "#155eef"
+    "light": "#0f1e30",
+    "dark": "#155eef"
   },
   "favicon": "/favicon.png",
   "navigation": {
