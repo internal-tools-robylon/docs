@@ -34,7 +34,7 @@
     ]
   },
   "logo": {
-    "light": "/robylon logo.png",
+    "light": "/Robylon logo light.svg",
     "dark": "/robylon logo.png"
   },
   "navbar": {
