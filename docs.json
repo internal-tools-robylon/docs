@@ -16,7 +16,10 @@
           {
             "group": "Get Started",
             "pages": [
-              "index"
+              "index",
+              "how-to-customize-your-robylon-bot",
+              "custom-domains",
+              "model-comparison"
             ]
           },
           {
