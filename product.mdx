@@ -78,7 +78,7 @@ Start your automation when **an event happens** in a channel or when **another a
 - **Email/Ticket**: created, reopened, updated, or automation-ended
 
 <Tip>
-   **Tip**: Use channel‑specific triggers in **small, composable workflows** rather than one mega‑flow. Easier to debug and reuse.
+  **Tip**: Use channel‑specific triggers in **small, composable workflows** rather than one mega‑flow. Easier to debug and reuse.
 </Tip>
 
 ---
@@ -133,14 +133,14 @@ Deterministic control inside the flow.
 - **Set variables** — Update global or local variables
 - **Delay** — Wait for async systems to settle (e.g., indexing, ticket sync)
 
-```mermaid
-A[Capture intent] --> B{Intent?}
-B -->|Returns| C{Has RMA?}
-C -->|Yes| D[API: Get RMA status]
-C -->|No| E[Generate: Explain RMA eligibility]
-D --> F[Talk: Share status with user]
-E --> F
-```
+<img
+  src="/images/flowchart.png"
+  alt="Descriptive alt text"
+  noZoom={true}
+  height="100"
+  className="mx-auto"
+  style={{ width:"66%" }}
+/>
 
 ---
 
