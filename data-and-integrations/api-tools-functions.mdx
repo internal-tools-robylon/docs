@@ -1,0 +1,100 @@
+---
+title: Create & Use APIs, Tools, and Functions
+description: Learn what APIs, Tools, and Functions are, when to use them, and how to implement them effectively with reusable templates, contracts, and Python code.
+sidebarTitle: APIs, Tools & Functions
+icon: plug
+---
+
+# Guide: Create and Use APIs, Tools, and Functions
+
+Use **APIs**, **Tools**, and **Functions** for advanced customization and integrations.  
+- **APIs** connect external systems and fetch/update data.  
+- **Tools** package repeatable actions behind clean input/output contracts.  
+- **Functions** run **Python** for custom logic that blocks can’t express.
+
+---
+
+## APIs
+
+### What is an API?
+An **API template** defines how to call an external service (method, URL, headers, params/body) and where to store the response for use in workflows.
+
+**Best practices**
+- Centralize repeated calls as **saved templates**.  
+- Use **secrets** for authentication (`${secrets.*}`).  
+- Reference workflow variables (`${vars.*}`) for dynamic values.  
+- Normalize responses and save them into `vars.*`.
+
+---
+
+### How to Create an API Template
+
+<Steps>
+  <Step title="Navigate to APIs">
+    Go to the **APIs** section in the sidebar.
+  </Step>
+  <Step title="Add a New API">
+    Click **Add API** to create a new template.
+  </Step>
+  <Step title="Configure the API Call">
+    Define:
+    - **Name** — e.g., `get_order_status`  
+    - **Request** — method (**GET**, **POST**) and URL  
+    - **Headers** — use secrets for auth tokens  
+    - **Params / Body** — JSON or key-value format  
+    - **Response Mapping** — select a variable to store results
+  </Step>
+  <Step title="Save the Template">
+    Click **Save**. The API is now reusable across workflows.
+  </Step>
+</Steps>
+
+# Tools
+## What is a Tool?
+
+A Tool is a reusable action that can be called by workflows or AI agents. Tools are best when multiple flows need the same logic with consistent inputs and outputs.
+
+## Best practices
+
+- Convert tested workflow logic with Pre-convert Tool.
+
+- Keep tools stateless and idempotent.
+
+- Define clear input/output contracts.
+
+- Add a consistent error shape ({code, message}).
+
+## How to Create a Tool
+
+- Design logic in a workflow.
+
+- Use Pre-convert Tool to save it as a reusable action.
+
+- The Tool appears in the Tools section with inputs and outputs inferred.
+
+# Functions
+## What is a Function?
+
+A Function is a block of Python code used when other workflow blocks aren’t flexible enough. Functions can validate data, run calculations, or transform values.
+
+## Best practices
+
+- Keep functions small, pure, and testable.
+
+- Validate inputs early.
+
+- Use them for transforms, calculations, and glue code.
+
+- Avoid long scripts or network I/O (better suited to APIs/Tools).
+
+# Testing & Troubleshooting
+
+- Dry-run APIs with sample variables; inspect responses.
+
+- Add internal logs for APIs, Tools, and Functions.
+
+- Use standard error shapes for consistency.
+
+- Keep functions lightweight; make tools reusable.
+
+- Prefer idempotent operations for safe retries.
