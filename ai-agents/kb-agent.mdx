@@ -1,0 +1,57 @@
+---
+title: Configure the Knowledge Base (KB) Agent
+description: Learn how to configure your Knowledge Base agent with custom instructions, tools, variables, and AI settings to deliver accurate and personalized answers.
+sidebarTitle: KB Agent
+icon: book-open
+---
+
+# Guide: How to Configure the Knowledge Base (KB) Agent
+
+A **Knowledge Base (KB) Agent** is created automatically when you add documents to your knowledge base. It leverages these documents to answer user questions and can be enhanced with instructions, tools, and personalization.
+
+---
+
+## Provide Custom Instructions
+In the **KB agent panel**, add **custom instructions** to guide how the agent queries information from your documents.  
+Examples:
+- “Always cite document titles when giving answers.”  
+- “For shipping policy questions, reference only the official policy doc.”  
+
+<Callout type="tip">
+Use clear, rule-based instructions to keep answers aligned with company policies.
+</Callout>
+
+---
+
+## Provide Tools for Dynamic Data
+The KB agent can also use **tools** for real-time or dynamic data.
+
+- Assign APIs or existing tools that supplement static documents.  
+- Example: Provide a **subscription status API** so the agent checks a user’s account before answering.  
+
+This enables **context-aware answers** that combine static documentation with live data.
+
+---
+
+## Personalize Responses with Variables
+Pass **user variables** into the KB agent for precise, personalized responses.
+
+- Example: Pass `user_type = premium`.  
+- The agent can then provide **14-day returns** for premium users and **7-day returns** for standard users.  
+
+Variables allow one KB agent to serve multiple customer tiers without duplicating content.
+
+---
+
+## Adjust AI Settings
+Fine-tune the KB agent’s performance in the **AI settings**:
+
+- **Model** — choose the underlying AI model (e.g., GPT-4, GPT-4o)  
+- **Temperature** — lower for consistent support answers, higher for creativity  
+- **Max tokens** — control the length of responses  
+
+<Callout type="note">
+Start with **low temperature (0.2–0.4)** for accuracy. Increase only if responses feel too rigid.
+</Callout>
+
+---
