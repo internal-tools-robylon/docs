@@ -1,13 +1,9 @@
 ---
-title: "Automations — Build, Orchestrate, and Ship AI Workflows"
-description: "Design reliable, debuggable automations using triggers, conversational I/O, GenAI, logic, and developer tools. Includes patterns, examples, and FAQs."
-sidebarTitle: "Automations"
-icon: "bolt"
+title: "Workflows"
+description: "
+Design reliable, debuggable AI-powered workflows using Triggers, Talk, Listen, Gen AI, Logic, Dev, and Notes blocks. This guide explains what each block does, when to use it, and shows end‑to‑end patterns."
 ---
 
-# Workflows
-
-Design reliable, debuggable **AI-powered workflows** using **Triggers**, **Talk**, **Listen**, **Gen AI**, **Logic**, **Dev**, and **Notes** blocks. This guide explains what each block does, when to use it, and shows end‑to‑end patterns.
 
 > Who is this for? Product managers, solutions engineers, and implementers building chat, voice, email, and ticketing automations.
 
@@ -44,9 +40,7 @@ Design reliable, debuggable **AI-powered workflows** using **Triggers**, **Talk*
     - **Email/Ticket**: On ticket created / reopened / updated / automation-ended
   </Step>
   <Step title="Collect context (Listen)">
-    Add **Capture** to parse essentials (e.g., `order_id`, `email`).
-    Use **Buttons** for guided choices (status, returns, billing).
-    Allow **Upload image** when proofs (POD, receipt, damage photos) are needed.
+    Add **Capture** to parse essentials (e.g., `order_id`, `email`). Use **Buttons** for guided choices (status, returns, billing). Allow **Upload image** when proofs (POD, receipt, damage photos) are needed.
   </Step>
   <Step title="Reason (Gen AI)">
     Add one **AI Agent** per workflow. Bind tools: **Generate** for responses, **Extract** for entities, **KB** and **APIs** for facts.

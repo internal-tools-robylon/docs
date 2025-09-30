@@ -1,29 +1,24 @@
 ---
-title: Create a Custom AI Agent
-description: Learn how to build and configure specialized AI agents to handle specific tasks within your workflows.
-sidebarTitle: Custom AI Agents
-icon: bot
----
-
-# Guide: How to Create a Custom AI Agent
-
-Build specialized agents to handle **specific tasks** within your workflows. Custom AI agents allow you to control behavior, assign tools, and fine-tune models for task-oriented automation.
-
+title: "Create a Custom AI Agent"
+description: "Build specialized agents to handle specific tasks within your workflows. Custom AI agents allow you to control behavior, assign tools, and fine-tune models for task-oriented automation."
+sidebarTitle: "Custom AI Agents"
+icon: "bot"
 ---
 
 ## What is a Custom AI Agent?
-A **Custom AI Agent** is a task-focused assistant that:  
-- Runs inside your workflows  
-- Has its own **prompt, tools, and context**  
-- Operates on a selected **channel** (e.g., chat, voice, or tickets)  
-- Can be tuned for accuracy, creativity, or brevity depending on use case  
 
-Typical use cases include:  
-- **Order status agents** that fetch and explain shipping updates  
-- **Billing agents** that answer invoice questions  
-- **Returns agents** that handle policy queries with tool access  
+A **Custom AI Agent** is a task-focused assistant that:
 
----
+- Runs inside your workflows
+- Has its own **prompt, tools, and context**
+- Operates on a selected **channel** (e.g., chat, voice, or tickets)
+- Can be tuned for accuracy, creativity, or brevity depending on use case
+
+Typical use cases include:
+
+- **Order status agents** that fetch and explain shipping updates
+- **Billing agents** that answer invoice questions
+- **Returns agents** that handle policy queries with tool access
 
 ## Steps to Create a Custom AI Agent
 
@@ -31,31 +26,24 @@ Typical use cases include:
   <Step title="Navigate to AI Agents">
     Go to **Workflows → Settings → AI Agents**.
   </Step>
-
   <Step title="Add a New Agent">
     Click **Add Agent** to start the creation process.
   </Step>
-
   <Step title="Define the Agent">
-    - **Name** — Give your agent a clear name  
-    - **Purpose** — Add a short description (e.g., “Order Support Agent”)  
+    - **Name** — Give your agent a clear name
+    - **Purpose** — Add a short description (e.g., “Order Support Agent”)
     - **Channel** — Select where it operates (e.g., Chat)
   </Step>
-
   <Step title="Configure its Behavior">
-    - **Prompt & Context** — Provide a detailed system prompt and background info  
-    - **Add Tools** — Assign APIs or functions the agent can call  
-    - **User Info** — Pass variables (e.g., `order_id`, `email`) for customer context  
+    - **Prompt & Context** — Provide a detailed system prompt and background info
+    - **Add Tools** — Assign APIs or functions the agent can call
+    - **User Info** — Pass variables (e.g., `order_id`, `email`) for customer context
     - **Fine-Tune Model** — Adjust model type, temperature, and max tokens
   </Step>
-
   <Step title="Save the Agent">
     Click **Save** to store your custom configuration.
   </Step>
-
   <Step title="Call the Agent in a Workflow">
     Add a **Custom AI Agent block** in any workflow to execute its function.
   </Step>
 </Steps>
-
-

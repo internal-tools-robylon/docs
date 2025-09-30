@@ -1,80 +1,120 @@
-
-
-# Guide: How to Manage Conversations in the Chat Window
-
-The **Chat tab** is the central hub for all live customer chats. From here, you can view active and resolved chats, inspect details, and take actions as an agent.
-
+---
+title: "Manage Conversations in the Chat Window"
+description: "The Chat tab is the central hub for all live customer conversations. Use it to monitor chats, take control from the bot, debug workflows, and manage human handoffs."
+sidebarTitle: "Chat Window"
+icon: "messages-square"
 ---
 
 ## View All Chats
 
-In the **main chat view**, you can see a list of all customer conversations with details such as:
+In the **main chat list**, you can see every conversation with:
 
 - **Chat ID**
 - **Resolution time**
 - **Current agent** (if assigned)
-- **Status** (open, closed, or bot-handled)
-
----
+- **Status** — **open**, **closed**, or **bot-handled**
 
 ## Inspect a Conversation
 
-Click on a chat to open its detailed view. This panel shows:
+Click any chat to open its **conversation view**, which includes:
 
-- The **full conversation history**
+- **Full conversation history**
 - **User details** (profile, contact information)
-- All associated **variables** captured during the chat
-
----
+- **Captured variables** used during the interaction
 
 ## Take Control of a Chat
 
-From the detailed chat view, a **human agent** can take over from the bot at any point.\
-This is useful when:
+From the detailed view, a **human agent** can take over from the bot at any point—useful when:
 
-- A customer asks for escalation
-- The issue requires human judgment
-- The bot triggers an internal handoff rule
+- A customer **asks for escalation**
+- The issue **requires human judgment**
+- The bot triggers an **internal handoff rule**
 
 <note>
-  Taking control will pause the bot and assign the conversation to you.
+  Taking control **pauses the bot** and **assigns the conversation** to you.
 </note>
-
----
 
 ## Use Debug Mode for Troubleshooting
 
-Enable **Debug Mode** in the conversation view to see:
+Enable **Debug Mode** to reveal:
 
-- Which **AI agents** were triggered
-- What **tools** were called
-- The decision path taken by the workflow
+- **Which AI agents** were triggered
+- **What tools** were called
+- The **decision path** taken by the workflow
 
 This is valuable for refining workflows, diagnosing unexpected behavior, and auditing automation.
 
-{/\* Rebove Debug mode as it is only for Robylon internal \*/}
-
----
-
 ## Filter Chats
 
-Use the **filter options** at the top of the chat tab to find specific conversations. You can filter by:
+Use the **filters** at the top of the tab to find specific conversations by:
 
 - **Agent**
-- **Status** (open, closed, pending)
+- **Status** — open, closed, pending
 - **Date range**
-
----
 
 ## View Human-Handled Chats
 
-Click on the **Human tab** to see a filtered list of chats closed by human agents.\
-This helps managers and QA teams review:
+Open the **Human** tab to see chats **closed by agents**. This helps managers and QA review:
 
-- Escalation frequency
-- Agent resolution quality
-- Trends in conversations requiring manual handling
+- **Escalation frequency**
+- **Agent resolution quality**
+- **Trends** in conversations requiring manual handling
+
+## View & Control Queued Chats
+
+The **Queue** tab shows chats waiting to be **assigned or handed over** to a human. Supervisors can track:
+
+- **Number of chats** currently waiting
+- **Average wait time** before pickup
+- **Peak load periods** when queue size grows
+
+## Details Pane
+
+The **Details** pane (right side) surfaces structured context for faster, safer resolutions.
+
+### User Info
+
+- **User** identifier (e.g., phone or handle)
+- **Phone / Email** — masked by default; click **Show** to reveal
+- **View More** — expand to see additional profile attributes
+
+<tip>
+  Keep **PII masked** by default. Reveal only when necessary to comply with privacy policies.
+</tip>
+
+### Issue Info
+
+- Current **issue classification** (if available)
+- Links or references to **related tickets/cases**
+
+### Tags
+
+- Add or remove **tags** to aid routing, reporting, and QA.
+- Use a consistent **taxonomy** (e.g., `billing`, `return`, `priority-high`).
+
+### Variables
+
+- All conversation **variables** captured or set by workflows (e.g., `order_id`, `is_vip`, `intent`).
+- Variables power **conditions**, **tools**, and **personalized replies**.
+
+<note>
+  If you don’t see expected variables, enable **Debug Mode** to verify captures and tool outputs.
+</note>
+
+### Recent Conversations
+
+- Quick access to the user’s **recent chats**, enabling faster context gathering and trend spotting.
+
+### Actions
+
+- **Share** conversation context (according to your org’s permissions).
+- Copy **Chat ID** or key fields for escalations and handoffs.
 
 ---
 
-{/\* Add content for queue \*/}
+## Best Practices
+
+- Keep **Debug Mode** on during testing; turn it off for routine operations.
+- Add **tags** consistently for better analytics and SLA reporting.
+- Verify **variables** before calling tools that depend on them.
+- Use the **Queue** tab to balance agent load during peaks.

@@ -1,28 +1,27 @@
 ---
-title: Create Variables, Intents, and Entities
-description: Learn how to define and configure variables, intents, and entities as core data objects for building automations.
-sidebarTitle: Variables, Intents & Entities
-icon: database
+title: "Create Variables, Intents, and Entities"
+description: "Learn how to define and configure variables, intents, and entities as core data objects for building automations."
+sidebarTitle: "Variables, Intents & Entities"
+icon: "database"
 ---
 
-# Guide: How to Create Variables, Intents, and Entities
+**Variables, Intents, and Entities** are the core data objects that power automations.
 
-**Variables, Intents, and Entities** are the core data objects that power automations.  
-- **Variables** store values used across workflows and agents.  
-- **Intents** classify what a user is trying to do.  
-- **Entities** extract structured data like IDs or numbers from unstructured input.  
-
----
+- **Variables** store values used across workflows and agents.
+- **Intents** classify what a user is trying to do.
+- **Entities** extract structured data like IDs or numbers from unstructured input.
 
 ## Variables
 
 ### What is a Variable?
+
 A **Variable** is a data placeholder that holds a value, such as a string, number, or dynamic expression. Variables can be used globally across workflows, agents, and tools to maintain context.
 
 **Best practices**
-- Use **global variables** for values that multiple workflows share (e.g., company name, support email).  
-- Use **dynamic expressions** to capture context from user messages.  
-- Name variables clearly (e.g., `user_email`, `order_id`).  
+
+- Use **global variables** for values that multiple workflows share (e.g., company name, support email).
+- Use **dynamic expressions** to capture context from user messages.
+- Name variables clearly (e.g., `user_email`, `order_id`).
 
 ---
 
@@ -36,9 +35,10 @@ A **Variable** is a data placeholder that holds a value, such as a string, numbe
     Click **Add Variable** and give it a descriptive name.
   </Step>
   <Step title="Set its Value">
-    Choose between:  
-    - **Static value** — e.g., “support@company.com”  
-    - **Dynamic expression** — value captured at runtime  
+    Choose between:
+
+    - **Static value** — e.g., “[support@company.com](mailto:support@company.com)”
+    - **Dynamic expression** — value captured at runtime
   </Step>
 </Steps>
 
@@ -47,12 +47,14 @@ A **Variable** is a data placeholder that holds a value, such as a string, numbe
 ## Intents
 
 ### What is an Intent?
-An **Intent** represents the purpose of a user’s message — e.g., *check order status*, *request refund*, *update email*. Intents help classify and route conversations.
+
+An **Intent** represents the purpose of a user’s message — e.g., _check order status_, _request refund_, _update email_. Intents help classify and route conversations.
 
 **Best practices**
-- Write clear intent names and descriptions.  
-- Add **diverse utterances** that cover how users phrase requests.  
-- Provide **positive and negative examples** of real tickets to refine accuracy.  
+
+- Write clear intent names and descriptions.
+- Add **diverse utterances** that cover how users phrase requests.
+- Provide **positive and negative examples** of real tickets to refine accuracy.
 
 ---
 
@@ -63,17 +65,19 @@ An **Intent** represents the purpose of a user’s message — e.g., *check orde
     Go to the **Intents** section.
   </Step>
   <Step title="Create a New Intent">
-    Provide:  
-    - **Name** — e.g., “Refund Request”  
-    - **Description** — what this intent should classify  
+    Provide:
+
+    - **Name** — e.g., “Refund Request”
+    - **Description** — what this intent should classify
   </Step>
   <Step title="Provide Utterances">
     Add user phrases (e.g., “I want my money back”, “Process my refund”).
   </Step>
   <Step title="Give Examples">
-    Provide:  
-    - **Positive examples** — tickets that belong to this intent  
-    - **Negative examples** — tickets that should not be classified under it  
+    Provide:
+
+    - **Positive examples** — tickets that belong to this intent
+    - **Negative examples** — tickets that should not be classified under it
   </Step>
 </Steps>
 
@@ -82,12 +86,14 @@ An **Intent** represents the purpose of a user’s message — e.g., *check orde
 ## Entities
 
 ### What is an Entity?
+
 An **Entity** is a structured piece of data extracted from user input. For example, an **Order ID**, **Transaction Number**, or **UTR Number**.
 
 **Best practices**
-- Use entities to extract important values from unstructured input.  
-- Provide clear **rules or regex patterns**.  
-- Add **examples** to help the AI recognize the entity.  
+
+- Use entities to extract important values from unstructured input.
+- Provide clear **rules or regex patterns**.
+- Add **examples** to help the AI recognize the entity.
 
 ---
 
@@ -101,17 +107,15 @@ An **Entity** is a structured piece of data extracted from user input. For examp
     Click **Add Entity** to begin.
   </Step>
   <Step title="Define the Entity">
-    - **Name** — e.g., “UTR Number”  
-    - **Rule** — pattern/format of the data (e.g., regex for transaction numbers)  
-    - **Description** — short explanation of what the entity represents  
-    - **Examples** — add **positive** and **negative** examples in sentences  
+    - **Name** — e.g., “UTR Number”
+    - **Rule** — pattern/format of the data (e.g., regex for transaction numbers)
+    - **Description** — short explanation of what the entity represents
+    - **Examples** — add **positive** and **negative** examples in sentences
   </Step>
 </Steps>
 
-<Callout type="note">
-Entities help AI agents automatically capture and use structured values like order IDs or phone numbers during conversations.
-</Callout>
+<note>
+  Entities help AI agents automatically capture and use structured values like order IDs or phone numbers during conversations.
+</note>
 
 ---
-
-
