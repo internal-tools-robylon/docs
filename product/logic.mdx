@@ -1,0 +1,44 @@
+---
+title: "Logic Components"
+description: "Logic components bring reasoning and control flow to workflows. They let you branch paths, update variables, and introduce delays to handle real-world timing and decision-making."
+---
+
+### Conditions
+
+The **Conditions block** works like **if–else statements** in programming.
+
+- Diverts workflow paths based on rules (e.g., `if status = open → continue`, `else → close`).
+- Common use cases:
+  - Route a ticket based on **priority level**
+  - Send premium users to a **VIP workflow**
+  - Trigger escalation if **CSAT \< 3**
+
+---
+
+### Set Variables
+
+The **Set Variables block** updates or assigns values to global or workflow-specific variables.
+
+- Often paired with **Conditions** for dynamic updates.
+- Examples:
+  - Set `escalation_required = true` if SLA is breached
+  - Update `retry_count` after an API failure
+  - Change `status = resolved` when conditions are met
+
+---
+
+### Delay
+
+The **Delay block** pauses the workflow for a set time before continuing.
+
+- Useful when external systems need time to update or respond.
+- Examples:
+  - Wait **5 seconds** after an API call before fetching results
+  - Add a **2-hour delay** before sending a follow-up reminder
+  - Space out retries when contacting a third-party system
+
+<Tip>
+  Use **short delays** for API syncs and **longer delays** for reminders, follow-ups, or staged notifications.
+</Tip>
+
+---

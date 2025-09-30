@@ -1,0 +1,56 @@
+---
+title: "Manage Human Users"
+description: "The Human Users tab is where you manage the people who can access the Robylon platform.
+Here, you can view all active users, assign roles, and control permissions."
+sidebarTitle: "Human Users"
+icon: "users"
+---
+
+## Roles & Permissions
+
+Each user is assigned a role that defines their level of access:
+
+| Role            | Chats & Tickets                   | Settings Access     | API Keys | Billing |
+| --------------- | --------------------------------- | ------------------- | -------- | ------- |
+| **Agent**       | Only their assigned chats/tickets | ❌                   | ❌        | ❌       |
+| **Supervisor**  | All chats and tickets             | ❌                   | ❌        | ❌       |
+| **Admin**       | All chats and tickets             | ✅ (settings access) | ❌        | ❌       |
+| **Super Admin** | Everything                        | ✅                   | ✅        | ✅       |
+
+<Tip>
+  Use the **least privilege principle**—assign only the minimum role needed for each user’s job.
+</Tip>
+
+---
+
+## Add a New Human User
+
+<Steps>
+  <Step title="Navigate to Human Users">
+    Go to **Teams → Human Users** in the sidebar.
+  </Step>
+  <Step title="Click Add New User">
+    Press the **Add New User** button.
+  </Step>
+  <Step title="Enter Details">
+    Provide the **name** and **email** of the new user.
+  </Step>
+  <Step title="Assign Channels & Role">
+    - Select which **channels** (chat, voice, tickets) the user can access.
+    - Assign one of the roles: **Agent**, **Supervisor**, **Admin**, or **Super Admin**.
+  </Step>
+  <Step title="Send Activation">
+    The user will receive an **activation email** at the provided address.
+  </Step>
+</Steps>
+
+---
+
+## Best Practices
+
+- Assign **Agent** roles to frontline staff handling conversations.
+- Use **Super Admin** roles sparingly (e.g., senior platform owners).
+- Rotate or disable inactive accounts to maintain security.
+- Review user roles quarterly to ensure compliance.
+
+---
