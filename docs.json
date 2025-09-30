@@ -46,6 +46,13 @@
               "data-and-integrations/secret-keys",
               "data-and-integrations/variables-intents-entities"
             ]
+          },
+          {
+            "group":"Knowledge Base",
+            "pages": [
+              "knowledgebase/index",
+              "knowledgebase/managingkb"
+            ]
           }
         ]
       }
