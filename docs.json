@@ -30,6 +30,22 @@
               "integrations/wix",
               "integrations/wordpress"
             ]
+          },
+          {
+            "group":"AI agents",
+            "pages": [
+              "ai-agents/custom-ai-agents",
+              "ai-agents/kb-agent",
+              "ai-agents/triage-agent"
+            ]
+          },
+          {
+            "group":"Data and Integrations",
+            "pages": [
+              "data-and-integrations/api-tools-functions",
+              "data-and-integrations/secret-keys",
+              "data-and-integrations/variables-intents-entities"
+            ]
           }
         ]
       }
