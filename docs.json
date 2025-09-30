@@ -77,6 +77,29 @@
               "product/logic",
               "product/dev-notes"
             ]
+          },
+          {
+            "group":"Human Users",
+            "pages": [
+              "human-users/add-human-users",
+              "human-users/agent-status",
+              "human-users/assignment",
+              "human-users/tags-canned"
+            ]
+          },
+          {
+            "group":"Conversation Insights",
+            "pages": [
+              "conversation-insights"
+            ]
+          },
+          {
+            "group":"Channels & Connectors",
+            "pages": [
+              "channels-connectors/channels",
+              "channels-connectors/chatbot-settings",
+              "channels-connectors/voice-settings"
+            ]
           }
         ]
       }
