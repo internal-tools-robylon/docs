@@ -43,7 +43,7 @@
             "group":"Data and Integrations",
             "pages": [
               "data-and-integrations/api-tools-functions",
-              "data-and-integrations/secret-keys",
+              "data-and-integrations/secrets-keys",
               "data-and-integrations/variables-intents-entities"
             ]
           },
