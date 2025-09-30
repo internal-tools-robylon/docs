@@ -53,6 +53,24 @@
               "knowledgebase/index",
               "knowledgebase/managingkb"
             ]
+          },
+          {
+            "group":"Analytics",
+            "pages": [
+              "analytics"
+            ]
+          },
+          {
+            "group":"AI persona",
+            "pages": [
+              "ai-persona"
+            ]
+          },
+          {
+            "group":"Workflows",
+            "pages": [
+              "product/product"
+            ]
           }
         ]
       }
