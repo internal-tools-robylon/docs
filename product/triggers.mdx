@@ -1,0 +1,57 @@
+---
+title: "Triggers"
+description: "Triggers are the start points of an automation. They fire when a specific event occurs and launch the configured workflow. Use them to control when an automation begins and to chain automations when one ends."
+---
+
+### When to use
+
+- Start a workflow the moment a **customer action** or **system event** happens.
+- **Hand over** from one automation to another (e.g., “automation-ended”).
+- Keep flows **event-driven** and **composable** instead of building one mega-flow.
+
+### Channel-specific trigger types
+
+| Channel             | Common Events                                                                     | Example Uses                                                                                 |
+| ------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| **Chat**            | **Chat created**, **User message**, **Bot handover**, **Automation ended**        | Start when a **customer initiates chat**, or when a **previous bot** hands over to this flow |
+| **Voice**           | **Inbound call received**, **Scheduled outbound call**                            | Launch IVR/auth flow when a **customer calls the helpline** or when the **system dials**     |
+| **Email / Tickets** | **Ticket created**, **Ticket reopened**, **Ticket updated**, **Automation ended** | Fire on **new ticket**, **customer reply**, or **status change** to continue processing      |
+
+### Examples
+
+- **Ticket created → Auto-triage** and add tags; if missing info, **email** the user for details.
+- **Chat bot handover → Returns flow** with order lookup and RMA status.
+- **Inbound call → Verify → Callback** flow with scheduled follow-up if lines are busy.
+
+### Chaining & Handover
+
+- Use **automation-ended** to start a **follow-on** automation after a flow completes.
+- Pass **context variables** (e.g., `intent`, `order_id`) to the next automation for continuity.
+
+### Best practices
+
+- Keep triggers **small and focused**; one clear entry per flow.
+- Use **specific events** (e.g., “ticket reopened”) to avoid unintended runs.
+- **Log** why/when a trigger fired (internal notes) for observability.
+- Guard against re-entry with **idempotency keys** or **status checks** when applicable.
+
+### Configure a trigger (Quick Steps)
+
+<Steps>
+  <Step title="Choose the channel">
+    Pick **Chat**, **Voice**, or **Email/Tickets** based on where the event occurs.
+  </Step>
+  <Step title="Select the event">
+    Choose the exact **event** (e.g., **Chat created**, **Ticket updated**, **Inbound call**).
+  </Step>
+  <Step title="Map starting variables">
+    Capture key context (e.g., `user_id`, `ticket_id`, `source`) for downstream blocks.
+  </Step>
+  <Step title="Define next action">
+    Route to your first block (**Listen**, **Gen AI**, or **Dev/API**) and set guardrails.
+  </Step>
+</Steps>
+
+<Note>
+  Use **automation-ended** triggers to orchestrate multi-stage journeys (e.g., **Triage → Resolution → Feedback**), keeping each stage independently testable and debuggable.
+</Note>

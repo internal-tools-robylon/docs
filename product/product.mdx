@@ -1,9 +1,7 @@
 ---
 title: "Workflows"
-description: "
-Design reliable, debuggable AI-powered workflows using Triggers, Talk, Listen, Gen AI, Logic, Dev, and Notes blocks. This guide explains what each block does, when to use it, and shows end‑to‑end patterns."
+description: " Design reliable, debuggable AI-powered workflows using Triggers, Talk, Listen, Gen AI, Logic, Dev, and Notes blocks. This guide explains what each block does, when to use it, and shows end‑to‑end patterns."
 ---
-
 
 > Who is this for? Product managers, solutions engineers, and implementers building chat, voice, email, and ticketing automations.
 
@@ -28,6 +26,10 @@ Design reliable, debuggable AI-powered workflows using Triggers, Talk, Listen, G
 - Test users and **sample tickets/chats**
 
 ---
+
+<Card title="New Card" icon="sparkles">
+  
+</Card>
 
 ## Quickstart — Your First Resolution Flow
 
@@ -59,109 +61,10 @@ Design reliable, debuggable AI-powered workflows using Triggers, Talk, Listen, G
   </Step>
 </Steps>
 
----
-
-## Concepts & Blocks
-
-### Triggers
-
-Start your automation when **an event happens** in a channel or when **another automation ends**. Typical events:
-
-- **Chat**: new conversation, user message, bot handover
-- **Voice**: inbound call to helpline, scheduled outbound call
-- **Email/Ticket**: created, reopened, updated, or automation-ended
-
-<Tip>
-  **Tip**: Use channel‑specific triggers in **small, composable workflows** rather than one mega‑flow. Easier to debug and reuse.
-</Tip>
-
----
-
-### Talk (Outputs)
-
-Send information to the right audience.
-
-- **Message** — Chat message to the user.
-- **Image** — Accept or show images in chat.
-- **Email** — Choose **Internal note** (only your team), **External note** (visible in ticketing tool but not sent to customer), or **Reply to ticket** (customer‑facing).
-
-<Note>
-  Use **Internal note** to log debug breadcrumbs during pilots. Switch to **Reply to ticket** once the flow is validated.
-</Note>
-
----
-
-### Listen (Inputs)
-
-Capture structured inputs or free text.
-
-- **Buttons** — Offer curated choices to reduce ambiguity.
-- **Capture** — Extract entities (order ID, phone, intent) from user text.
-- **Upload image** — Let users attach receipts, IDs, or damage photos.
-
-<Accordion title="Intent Routing with Capture">
-  Use **Capture** with intent detection to route to the right sub‑flow (e.g., _order status_, _return_, _billing_). Store results in variables (e.g., `intent`, `order_id`).
-</Accordion>
-
----
-
-### Gen AI
-
-Make responses accurate and contextual.
-
-- **AI Agent** — One per workflow; orchestrates tools and KB. Calls **API**, **Function**, **Generate**, and **Extract**.
-- **Generate** — Drafts answers, reformats content, evaluates if the user’s question is fully answered.
-- **Extract** — Pulls structured data (entities) from messages.
-
-<Danger>
-  Ensure **tool call contracts** are explicit: name, inputs, expected outputs, error shapes. Log tool I/O to internal notes for traceability.
-</Danger>
-
----
-
-### Logic
-
-Deterministic control inside the flow.
-
-- **Conditions** — If/Else branching for state, API results, or flags
-- **Set variables** — Update global or local variables
-- **Delay** — Wait for async systems to settle (e.g., indexing, ticket sync)
-
-<img
-  src="/images/flowchart.png"
-  alt="Descriptive alt text"
-  noZoom={true}
-  height="100"
-  className="mx-auto"
-  style={{ width:"66%" }}
-/>
-
----
-
-### Dev
-
-Bring your own business logic and systems.
-
-- **API** — Call REST/GraphQL endpoints using user/session variables
-- **Function (Python)** — Validate data (e.g., transaction hash), transform payloads, compute scores
-- **Integration** — Connect 3rd‑party apps (e.g., Google Sheets) to read/write rows
-
-```json
-{
-  "name": "get_order_status",
-  "method": "GET",
-  "url": "https://api.example.com/orders/{order_id}",
-  "headers": {"Authorization": "Bearer ${secrets.api_token}"},
-  "on_success": {
-    "set_variables": {"order_status": "${response.status}"}
-  },
-  "on_error": {
-    "talk_internal_note": "Order API failed: ${error.message}"
-  }
-}
-```
-
----
+<Card title="Triggers" icon="text" href="/product/triggers">
+  This is how you use a card with an icon and a link. Clicking on this card
+  brings you to the Columns page.
+</Card>
 
 ## Patterns
 

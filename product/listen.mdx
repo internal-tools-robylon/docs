@@ -1,0 +1,64 @@
+---
+title: "Listen Components"
+description: "Listen components capture inputs from customers, ticketing systems, APIs, or other workflows. They ensure automations receive the right context before taking action."
+---
+
+### Listen
+
+The **Listen block** captures **incoming data**:
+
+- User inputs in chat or voice
+- Data from ticket handling systems
+- Responses from APIs
+
+Use it as the **starting point** for gathering context before moving to logic or actions.
+
+---
+
+### Buttons
+
+**Buttons** provide users with a **list of predefined options** to select.\
+Examples:
+
+- “Check Order Status” / “Request Refund” / “Talk to Agent”
+- Yes / No confirmations
+- Quick navigation in chatbots
+
+This reduces ambiguity and speeds up intent detection.
+
+---
+
+### Capture
+
+The **Capture block** extracts **structured variables** from user responses.
+
+- Examples: `order_id`, `transaction_id`, `email`
+- Can also detect **intent** based on the reply
+- Useful for **sorting queries** and routing to the right workflow or sub-agent
+
+---
+
+### Upload Image
+
+Allows a chatbot to **receive images** from users.\
+Common use cases:
+
+- Upload **payment confirmation screenshots**
+- Submit **ID proof** for KYC
+- Share photos of **defective products** for return requests
+
+---
+
+### Carousel
+
+A **Carousel** displays a **scrollable set of cards**—each with an **image, title, description, and button**.
+
+- Cards can be created **manually** or from a **JSON list**
+- Each card button sends its data to the AI agent
+- Ideal for chatbots in **e-commerce**, **product discovery**, or **FAQ navigation**
+
+<Tip>
+  Carousels work best for **visual menus** (e.g., product recommendations, feature comparisons) where users can click through instead of typing queries.
+</Tip>
+
+---
