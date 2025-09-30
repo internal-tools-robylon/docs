@@ -51,39 +51,39 @@ An **API template** defines how to call an external service (method, URL, header
   </Step>
 </Steps>
 
-# Tools
+## Tools
 
-## What is a Tool?
+### What is a Tool?
 
 A Tool is a reusable action that can be called by workflows or AI agents. Tools are best when multiple flows need the same logic with consistent inputs and outputs.
 
-## Best practices
+### Best practices
 
 - Convert tested workflow logic with Pre-convert Tool.
 - Keep tools stateless and idempotent.
 - Define clear input/output contracts.
 - Add a consistent error shape (code, message).
 
-## How to Create a Tool
+### How to Create a Tool
 
 - Design logic in a workflow.
 - Use Pre-convert Tool to save it as a reusable action.
 - The Tool appears in the Tools section with inputs and outputs inferred.
 
-# Functions
+## Functions
 
-## What is a Function?
+### What is a Function?
 
 A Function is a block of Python code used when other workflow blocks aren’t flexible enough. Functions can validate data, run calculations, or transform values.
 
-## Best practices
+### Best practices
 
 - Keep functions small, pure, and testable.
 - Validate inputs early.
 - Use them for transforms, calculations, and glue code.
 - Avoid long scripts or network I/O (better suited to APIs/Tools).
 
-# Testing & Troubleshooting
+## Testing & Troubleshooting
 
 - Dry-run APIs with sample variables; inspect responses.
 - Add internal logs for APIs, Tools, and Functions.
