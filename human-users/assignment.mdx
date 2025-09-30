@@ -1,0 +1,81 @@
+---
+title: "Assignment Logic"
+description: "The Assignment Logic tab controls how chat and voice agent handovers are handled. You can configure rules for agent assignment, working hours, out-of-office handling, and holiday schedules."
+sidebarTitle: "Assignment Logic"
+icon: "workflow"
+---
+
+## Chat Assignment Settings
+
+### Assignee Group
+
+Choose which roles can handle chats:
+
+- **Agents**
+- **Supervisors**
+- **Admins**
+- **Super Admins**
+
+### Assignment Logic
+
+Define how chats are assigned to human agents:
+
+- **Manual** — Supervisor/admin assigns chats directly.
+- **Round Robin** — Chats rotate evenly among available agents.
+- **Balanced** — Chats go to the agent with the **least pending tickets**.
+
+You can also set the **maximum number of tickets** that can be auto-assigned to a single agent.
+
+### Auto Salutation
+
+Automatically send a **welcome message** when a chat is assigned to a human agent.
+
+### Working Hours
+
+Configure when human agents are available:
+
+- Set **working days** of the week
+- Define **working hours** per day
+
+### Out of Office Settings
+
+Decide how chats are handled outside working hours:
+
+- Assign chats to humans during **out-of-office hours** (yes/no)
+- Allow **verification tasks** to be assigned after hours (yes/no)
+- Define the **message shown to users** when no agents are available
+
+### Holidays
+
+Add public holidays where agents will not be available. Chats received during these days follow the **out-of-office settings**.
+
+---
+
+## Voice Call Assignment Settings
+
+### Call Configurations
+
+- Create **voice call configurations** with a **name** and a **list of phone numbers**.
+- These numbers will receive calls when a **voice handover** occurs.
+
+### Working Hours
+
+Define the working days and hours for **voice agents**, similar to chat.
+
+### Out of Office Settings
+
+Set how calls are handled when agents are unavailable:
+
+- Decide whether calls should be routed to humans outside working hours.
+- Add a **message** to be played when no agents are available.
+
+### Transfer Types
+
+- **Warm Transfer** — Call is transferred with a **handover message**.
+- **Cold Transfer** — Call is transferred **without any message**.
+
+<Tip>
+  Use **Warm Transfer** for customer-facing teams to ensure smoother context-sharing. Use **Cold Transfer** for urgent or high-volume scenarios.
+</Tip>
+
+---
