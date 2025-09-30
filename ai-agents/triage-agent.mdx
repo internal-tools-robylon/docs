@@ -1,0 +1,64 @@
+---
+title: "Create a Triage (Master) AI Agent"
+description: "A Triage Agent (aka Master Agent) acts as a smart router. It analyzes each incoming ticket/chat, applies priority-based rules, and hands off to the right Sub-Agent for expert handling—rather than solving the issue itself."
+sidebarTitle: "Triage Agent"
+icon: "workflow"
+---
+
+## Key Concepts
+
+### **Triage Agent (Master Agent)**
+
+A high-level orchestrator that reads incoming data, follows rule-based **Custom Instructions**, and **routes** the task to a Sub-Agent.
+
+### **Sub-Agents**
+
+Specialized agents for domains such as **Billing**, **Technical Support**, **Account Management**, or **Sales**. Each owns a narrow scope and clear success criteria.
+
+### **Custom Instructions**
+
+The agent’s “playbook.” A detailed, step-by-step prompt that defines **priorities**, **checks**, and **handover rules**.
+
+### **Tools**
+
+External functions/APIs the agent can call to make better routing decisions (e.g., **check country**, **lookup order**, **subscription status**).
+
+---
+
+## How the Triage Process Works
+
+1. **Initial Analysis** — Parse subject, description, user data, tags, and variables.
+2. **Priority-Based Checks** — Execute checks in order:
+   - **Priority 0: Pre-qualification & Filtering** (e.g., non-operational country → send policy message & close).
+   - **Priority 1: Intent Identification** (e.g., `password_reset`, `billing_dispute`, `product_feature_question`).
+   - **Priority 2: Keyword/Tag Fallback** when intent confidence is low.
+3. **Routing** — Map **intent** (or fallback outcome) to a **Sub-Agent** and **handover**.
+4. **Exception/Fallback** — If nothing matches, **route to General Queries** or **flag for human review**.
+
+<Mermaid>
+  flowchart TD A[Incoming request] --\> B[Priority 0: Pre-checks] B --\>|Non-operational country| X[Auto-response / Close] B --\>|OK| C[Priority 1: Detect intent] C --\>|High confidence| D[Map to sub-agent] C --\>|Low/None| E[Priority 2: Keyword/Tag fallback] E --\>|Found| D E --\>|Not found| F[Fallback: General agent or human review] D --\> G[Handover to Sub-Agent]
+</Mermaid>
+
+---
+
+## Step-by-Step: Create the Triage Agent
+
+<Steps>
+  <Step title="Define Your Sub-Agents">
+    Ensure specialized agents exist (e.g., **Order Status**, **Withdrawals**, **Refund**). Each should have a clear scope, inputs, and tools.
+  </Step>
+  <Step title="Create the Triage Agent">
+    Navigate to **AI Agents** → click **Add Agent** → name it (e.g., **Master Triage Agent**) → select **Create Agent**.
+  </Step>
+  <Step title="Attach Tools (Optional but Recommended)">
+    Add lookups you’ll reference in rules (e.g., **country check**, **order lookup**, **subscription status**).
+  </Step>
+  <Step title="Write the Custom Instructions">
+    Provide a **role**, **process**, **priority rules**, **routing map**, and a **final fallback**.
+  </Step>
+  <Step title="Save & Publish">
+    Save, test with sandbox cases, then publish to production when stable.
+  </Step>
+</Steps>
+
+---

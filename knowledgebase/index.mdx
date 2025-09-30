@@ -1,0 +1,63 @@
+---
+title: "Knowledge Base"
+description: "Getting Started with Your Robylon AI Knowledge Base!"
+---
+
+Welcome to your Robylon AI Knowledge Base! Think of this as the brain of your AI agent, powering it to provide instant, accurate, and consistent answers to all user queries. Everything you add here - documents, Q&As, and web pages - will be used by your agent to learn and provide accurate, instant answers to user queries. A well-structured knowledge base is the key to a powerful and effective AI assistant.
+This guide will walk you through everything you need to know about building and managing your knowledge base.
+
+## Adding Information to Your Knowledge Base
+
+Your knowledge base is where you store all the information you want your AI agent to know. You can add content in several ways. To get started, navigate to the Knowledge section from the left-hand menu, click on Source and then click on the Add Source button in the top right.
+You'll see four options to add content:
+
+<AccordionGroup>
+  <Accordion title="Option 1: Adding a Q&A" icon="messages-question">
+    This is perfect for adding specific information, FAQs, or correcting your AI on certain topics.
+
+    1. Select 'Add a Q&A'.
+    2. Title: Give a clear title to your Q&A entry for easy reference.
+    3. Question: Enter a question that you anticipate your users will ask. You can add multiple variations of the same question by clicking + Add question (e.g., 'How do I reset my password?', 'Password reset steps?').
+    4. Answer: Provide a clear and concise answer.
+    5. (Optional) Reference Link: If the answer is sourced from a specific webpage, add the URL here. This helps the AI provide a source for its answers or provides users with a link for more information.
+    6. (Optional) KB Tags: Add tags to categorize your Q&A. This can be useful for organizing and filtering your knowledge base.
+    7. Click Add Q&A to save.
+  </Accordion>
+  <Accordion title="Option 2: Uploading a File" icon="file">
+    You can upload existing documents to quickly build your knowledge base. This is ideal for policy documents, product manuals, or internal guides.
+
+    1. Select 'Upload a File'.
+    2. You can either drag and drop your file into the window or click Select from Device to browse and choose a file. Supported file types, such as .pdf, .txt, and .docx, are listed within the upload window, with a size limit of up to 50MB.
+    3. (Optional) KB Tags: Add tags to organize the uploaded file.
+    4. Click Add File(s). The file will be processed and added to your knowledge base.
+  </Accordion>
+  <Accordion title="Option 3: Adding from Google Drive" icon="cloud">
+    Sync from Google Drive to add your files. The initial sync will pull the current version of the file. To see new changes later, do a manual refresh or turn on auto-refresh.
+
+    1. Select 'Add from Google Drive'.
+    2. Click Connect to link your Google Drive account. You'll need to grant Robylon AI permission to access your files.
+    3. Once connected, Select a File by searching or browsing your Drive. You can also choose to Upload the entire folder – ideal for syncing entire documentation libraries at once.
+    4. Refresh: Set a frequency (e.g., Monthly, Weekly, Daily) for Robylon AI to automatically check for updates to this file. Note that this functionality is available only on Business and Enterprise plans.
+    5. (Optional) KB Tags & Reference Link: Add tags for organization or a link for reference.
+    6. Click Add File(s) to upload the content.
+  </Accordion>
+  <Accordion title="Option 4: Syncing a Webpage" icon="globe-pointer">
+    Pull content directly from your website - pages, FAQs, help center, etc. Keep it current with a manual refresh or a scheduled auto-refresh.
+
+    1. Select 'Sync webpage(s)'.
+    2. Website URL to Sync: Enter the URL of the website you want to crawl. Robylon AI will search for all pages on this site.
+    3. URL paths: You can control which pages are included or excluded. These allow you to precisely control the scope of the sync, ensuring only relevant content is ingested and avoiding unnecessary pages like login forms.
+       1. URL paths to include: Use this to sync only specific sections of a website (e.g., /help or /blog).
+       2. URL paths to exclude: Use this to prevent specific sections from being synced (e.g., /login or /careers).
+    4. Advanced Settings (Optional):
+       1. Additional URLs: Add comma-separated URLs of specific pages you want to sync.
+       2. Wait to load CSS selector: Use a CSS selector to delay scraping for pages with dynamic content (e.g., #content-loaded). Consult your web developer or use browser developer tools to find appropriate selectors.
+       3. Use XML Sitemap: Enable this to use the website's sitemap for more efficient crawling.
+    5. Click Crawl. Once the crawling process is complete, a list of discovered URLs will appear. From this list, you can then select which URLs to include or exclude from your knowledge base.
+    6. Click Publish to add the selected URLs’ content to your knowledge base.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Managing Your Knowledge Base" icon="list-check" horizontal={false} href="/knowledgebase/managingkb">
+  Set rules, tag content, and guide the KB Agent.
+</Card>

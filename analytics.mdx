@@ -1,0 +1,146 @@
+---
+title: "Guide: Using the Analytics Dashboard"
+description: "The Analytics tab provides detailed reports and real-time data on team performance and customer interactions.
+This guide explains how to configure your dashboard, set up automated reports, and track key support metrics."
+sidebarTitle: "Analytics Dashboard"
+icon: "chart-bar"
+---
+
+## Configure Your Dashboard
+
+Use the **configuration button** on the Analytics tab to enable or disable the analytics modules you want to view.\
+You can personalize the dashboard for different roles (e.g., managers, team leads, agents).
+
+---
+
+## Create an Automated Report
+
+<Steps>
+  <Step title="Create a New Report">
+    Click the **New Report** button on the Analytics tab.
+  </Step>
+  <Step title="Set Delivery Schedule">
+    Choose how often the report is emailed:
+
+    - **Daily** — Track day-to-day performance
+    - **Monthly** — Monitor trends and strategy outcomes
+    - **On-demand** — Generate custom reports anytime
+  </Step>
+  <Step title="Export Data (Optional)">
+    Export reports to an **Excel file** with detailed ticket resolutions and automation data.
+  </Step>
+</Steps>
+
+---
+
+## View Key Metrics
+
+<Accordion title="Team Activity">
+  View a list of team members with:
+
+  - Online / Offline status
+  - Login and logout times
+  - Total time available for chat
+</Accordion>
+
+<Accordion title="Chat Resolutions">
+  Track:
+
+  - Chats created
+  - Chats closed by the bot
+  - Chats closed by agents
+
+  Filter by **Today, Yesterday, or Last 7 Days**, and compare with previous periods.
+</Accordion>
+
+<Accordion title="Customer Satisfaction (CSAT)">
+  Monitor overall **CSAT scores** across all channels, as well as:
+
+  - Bot CSAT
+  - Agent CSAT
+
+  View **trends over time** to identify performance peaks and dips.
+</Accordion>
+
+<Accordion title="Issue Types">
+  Analyze the distribution of **common issues** across chats and tickets.\
+  Helps identify recurring customer pain points and prioritize fixes.
+</Accordion>
+
+<Accordion title="Knowledge Base Gaps">
+  Measure knowledge base effectiveness:
+
+  - Total questions asked
+  - Successfully answered by KB
+  - Unanswered queries
+
+  Use these insights to improve and expand your documentation.
+</Accordion>
+
+---
+## Voice Analytics
+
+Track how your **voice agent** performs across pickups, duration, and user engagement. Use the **date filters** (15 Days, 7 Days, Today) to switch time ranges and compare trends.
+
+
+### Voice Resolution (KPIs)
+At the top of the page, the Voice Resolution strip shows today’s headline metrics (with % deltas vs. previous period):
+
+- **Voice Calls Triggered** — Total outbound/inbound voice tasks initiated.  
+- **Voice Calls Picked Up** — Calls answered by users.  
+- **Voice Calls Picked Up in First Try** — First-attempt connections (quality of list/routing).  
+- **Call Tries per Pickup** — Average attempts needed to get one pickup (lower is better).  
+- **Average Call Duration per Picked-Up Call** — Typical handle time for successful calls.  
+- **Average Number of User Turns per Picked-Up Call** — Conversation depth/engagement signal.
+
+<Tip>
+If **Call Tries per Pickup** rises or **First-Try Pickups** drop, review dialer windows, number reputation, and list quality.
+</Tip>
+
+### Call Analytics (Timeline)
+A time-series chart of call outcomes for the selected range:
+
+- **Calls triggered** (red)  
+- **Calls picked up** (blue)  
+- **Picked up first try** (green)
+
+Use this to spot **spikes** in calling or **pickup windows** (hours where users answer most).
+
+### Retries per Pickup
+Line chart of **average retries before a successful pickup** across the day.  
+- Sudden peaks suggest list quality issues or suboptimal call windows.  
+- Sustained high values warrant **cooldown** rules or **time-of-day** adjustments.
+
+### Call Duration (Bucketed)
+Histogram of **picked-up call durations** (e.g., `<10s`, `10–30s`, `30–120s`, `120–300s`, `300–600s`, `>600s`).  
+- More **30–120s** bars usually indicate efficient verification/short workflows.  
+- Many **less than 10s** calls may imply accidental pickups or poor intros.
+
+### User Turns (Distribution)
+Bar chart of **user turns per picked-up call** (e.g., `0`, `1–3`, `3–6`, …).  
+- **0 turns** after pickup → user hang-ups or IVR misfit.  
+- **1–3 turns** suggests short confirmations; **6+** may need script simplification.
+
+---
+
+### Recommended Actions
+- **Improve pickup**: Test alternate **calling windows**, verify **CLID reputation**, and throttle retries to reduce **Call Tries per Pickup**.  
+- **Tighten intro**: If ** less than 10s durations** spike, shorten the greeting and clearly state **purpose + opt-out**.  
+- **Guide to resolution**: If **User Turns = 0** or **1** dominate, add a quick **DTMF** or **yes/no** prompt to capture intent before hang-up.  
+- **Policy & cadence**: Cap total attempts per user/day and add **cooldowns** after consecutive failures.
+
+<Note>
+All charts respect the **15 Days / 7 Days / Today** filters. Use the same range when comparing KPIs to timeline patterns.
+</Note>
+
+---
+
+## Best Practices
+
+<Note>
+  Schedule **monthly automated reports** for leadership review, and **daily reports** for frontline managers.
+</Note>
+
+<Tip>
+  Use **Knowledge Base Gap reports** to prioritize new help articles. A 10% reduction in unanswered queries can significantly boost CSAT.
+</Tip>
