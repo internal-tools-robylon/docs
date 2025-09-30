@@ -69,7 +69,13 @@
           {
             "group":"Workflows",
             "pages": [
-              "product/product"
+              "product/product",
+              "product/triggers",
+              "product/talk",
+              "product/listen",
+              "product/gen-ai",
+              "product/logic",
+              "product/dev-notes"
             ]
           }
         ]
