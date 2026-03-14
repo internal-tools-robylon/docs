@@ -1,0 +1,70 @@
+---
+title: "Custom KB Responses"
+---
+
+The agents utilize a framework called **Retrieval-Augmented Generation (RAG)**. Instead of relying on the AI's general, pre-existing knowledge (which can lead to hallucinations), RAG forces the AI to "read" the specific knowledge base before answering.
+
+# 1. The Foundation: How RAG is Created from the KB Content
+
+Here is how the KB content is transformed into a RAG-ready format:
+
+- **Parsing:** When you upload content (PDFs, URLs, Help Center articles), the raw text is extracted.
+- **Chunking:** The AI cannot read an entire manual at once efficiently. We break the documents down into smaller, logical, overlapping paragraphs called "chunks."
+- **Embedding:** We use advanced machine learning models to translate these text chunks into complex numerical arrays called vectors.
+- **Storage:** These vectors are stored in a specialized Vector Database. Think of this database as a massive, highly organized library where information is grouped by its underlying meaning, not just its keywords.
+
+# 2. Query Expansion: Understanding the Customer's True Intent
+
+Customers rarely ask perfect questions. A user might type "reset" or "it won't turn on." If we searched the KB for exactly those words, we might get poor results. To fix this, the agent performs **Query Expansion**.
+
+**The Meaning:** Query expansion is the process of taking the user's raw input and enriching it with context from the ongoing conversation to create a highly detailed search query.
+
+**The Process:** Before searching the database, our AI analyzes the user's message alongside the chat history.
+
+# 3. Semantic Search on Chunks
+
+Once the query is expanded, the agent needs to find the exact chunks of data in the Knowledge Base that contain the answer. We do this using **Semantic Search**.
+
+**The Meaning:** Unlike traditional search engines that look for exact keyword matches (e.g., matching the word "billing" to "billing"), semantic search looks for meaning. It knows that "pricing," "cost," and "invoice" are related to "billing."
+
+**The Process:** The expanded query is converted into a numerical vector (just like the KB chunks were). The system then scans the Vector Database to find the chunks that are mathematically closest in "meaning" to the query. It retrieves a preliminary list of the most relevant chunks.
+
+# 4. Reranking of Chunks: Quality Control
+
+Semantic search is incredibly fast, but it can sometimes retrieve chunks that are only slightly related to the topic. To ensure the AI gets only the highest-quality information, we apply a **Reranking** process.
+
+**The Process:** A secondary AI model acts as a judge. It takes the user's query and strictly evaluates the list of chunks retrieved during the semantic search. It scores each chunk based on how directly it answers the specific question, discarding the "fluff" and sorting the remaining chunks from most relevant to least relevant.
+
+# 5. Final KB Response Generation (and Custom Instructions)
+
+This is where the magic happens. Now the agent has the perfectly reranked chunks of information, it's time to talk to the customer.
+
+The system creates a comprehensive "prompt" package to send to the final Large Language Model (LLM). This package includes:
+
+1. The User's Question.
+2. The Top Reranked KB Chunks (the facts).
+3. The Custom KB Response Instructions.
+
+### **The Role of Custom Instructions**
+
+The Custom KB Instructions act as the "director" of the AI. Even with perfect facts, the AI needs to know how to speak. The instructions dictate the agent's tone, formatting, and constraints. For example, the custom instructions might state:
+
+- "Always reply in a friendly, casual tone."
+- "If the answer involves multiple steps, always use bullet points."
+- "If the answer is not in the provided text, apologize and offer to connect them to a human agent."
+
+The LLM reads the facts, applies the Custom Instructions, and generates the final, perfectly tailored response.
+
+# 6. Fine-Tuning the Experience: Chunk Limits & Follow-Up Questions
+
+As you configure the agent, you will encounter a few advanced settings that give you ultimate control over the user experience:
+
+### **What is a 'Chunk Limit'?**
+
+The chunk limit is the maximum number of text chunks the AI is allowed to "read" when generating a response.
+
+**Why it matters:** Feeding the AI too many chunks can cause "information overload," leading to confused answers or higher latency (slower response times). Setting a proper chunk limit (e.g., 3 to 5 chunks) ensures the AI stays laser-focused on the most relevant facts.
+
+### **Follow-Up Questions**
+
+A great support agent anticipates what the customer needs next. Based on the chunks retrieved and the response generated, KB agent can automatically generate contextual Follow-Up Questions.

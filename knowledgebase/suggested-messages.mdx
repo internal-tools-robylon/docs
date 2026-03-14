@@ -1,0 +1,63 @@
+---
+title: "Suggested Messages"
+---
+
+Proactive messages allow you to reach out to website visitors before they initiate a conversation. This guide walks you through setting up the message and building the workflow that handles user responses.
+
+# How to Set Up Proactive Messages
+
+### **1. Navigate to the Outbound Tab**
+
+Log in to your Robylon dashboard and click on the **Outbound** tab in the main navigation menu.
+
+### **2. Create a New Message**
+
+Click the **Create a proactive message** button to start configuration.
+
+### **3. Configure Message Content**
+
+- **Message Type:** Choose whether you want to display **Text** or a **Button**.
+- **Content:** Enter the text you want to show to the customer (e.g., "Hi! Need help with pricing?").
+
+### **4. Set Display Rules**
+
+Define when and where the message should appear:
+
+- **Timing:** Set the delay time (e.g., send after 5 seconds).
+- **Targeting:** Specify the **Page URL** where this message should be shown.
+
+### **5. Save**
+
+Click **Next** to store your message settings.
+
+# Build the Workflow
+
+Once the message is set up, you need to configure what happens when a user clicks or replies to it.
+
+### **1. Go to Workflows**
+
+Navigate to the **Workflows** section from the **Settings** tab of the dashboard.
+
+### **2. Create a New Workflow**
+
+Click **Create Workflow** to start a new automation flow.
+
+### **3. Add a Trigger**
+
+Select the trigger step to initiate the flow. Configure it:
+
+- **Trigger Category:** Select **Channel Trigger**.
+- **Channel Type:** Select **Robylon Chat**.
+- **Trigger Event:** Select **When a user replies to a proactive message**.
+
+### **4. Define the Action**
+
+Now, build the journey for the user. You can add actions such as:
+
+- Sending a follow-up message.
+- Asking for customer details (Lead Gen).
+- Assigning the chat to a human agent.
+
+### **5. Publish Workflow**
+
+Once your flow is designed, click **Publish** to make it live.

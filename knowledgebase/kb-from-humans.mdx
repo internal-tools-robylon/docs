@@ -1,0 +1,130 @@
+---
+title: "Knowledge Base from Humans"
+---
+
+The **KB from Humans** feature allows you to automatically generate Q&A pairs for your Knowledge Base directly from closed human agent conversations. Instead of manually creating Q&As from scratch, this feature learns from your best agents' responses and converts them into reusable knowledge that your AI chatbot can use to answer similar questions in the future.
+
+When enabled, the system monitors closed conversations of selected human agents and generates Q&A entries from those interactions. You can choose to have these Q&As go live immediately or require manual review before they are added to the chatbot's active knowledge.
+
+# Key Concepts
+
+**Auto-Generation from Closed Chats:** Q&As are created automatically when a monitored human agent's chat is closed. There is no manual trigger required — the system processes conversations as they close.
+
+**Agent Selection:** You choose which human agents' conversations should be used for Q&A generation. Only closed chats from the selected agents are processed.
+
+**Auto-Review vs. Manual Review:** You can enable auto-review, which directly adds generated Q&As in a live (Enabled) state. If auto-review is turned off, generated Q&As will be in a "Pending for Review" state and must be manually approved before the chatbot uses them.
+
+**Maximum Q&A Limit:** You can set a cap on the total number of Q&As to be generated, up to a maximum of 500.
+
+**Duplicate and Conflict Prevention:** The system checks for duplicates and contradictions with existing KB entries. If a conflict or duplicate is detected, the new Q&A is discarded and the existing entry is preserved.
+
+**Priority:** Generated Q&As maintain the same high priority as other Q&As in the Knowledge Base.
+
+# Enabling Q&As from Human Agents
+
+### **Step-by-Step Guide**
+
+1. Log in to your Robylon dashboard.
+2. From the left sidebar, navigate to **Knowledge Base**.
+3. Click the **Add Source** button. The **Select Source Type** popup will appear with all available source options.
+4. Select **Q&As from Human Agent** at the bottom of the list. If this source has not been enabled yet, you will see a "Not Enabled Yet" badge next to the option.
+5. A configuration popup will open, titled **Q&As from Human Agent**, with the following settings:
+
+### **Configuration Fields**
+
+**Conversations from selected human agents:** Use the multi-select dropdown to choose which human agents' closed conversations should be used for Q&A generation. You can select one or more agents. Only closed chats from these agents will be processed.
+
+**Enable auto-review of Q&As?:** Toggle this setting on or off. When enabled, generated Q&As will be directly added to the KB in a live state for the chatbot to use immediately. When disabled, Q&As will be created in a "Pending for Review" state and will require manual approval.
+
+**Max Q&As to be generated:** Enter the maximum number of Q&As you want the system to generate. This is an integer field with a maximum value of 5,000. The system will stop generating new Q&As once this limit is reached.
+
+# Starting and Stopping Generation
+
+When configuring for the first time, you will see two buttons at the bottom of the popup:
+
+- **Save** — Saves the configuration without enabling generation.
+- **Enable** — Saves the configuration and starts Q&A generation immediately.
+
+Once generation has been enabled, a dedicated folder named "Q&As from Human Agents" will appear in your KB Sources list. A confirmation toast message will appear at the bottom of the screen confirming that the feature has been enabled.
+
+# Managing Generated Q&As
+
+### **The Q&As from Human Agents Folder**
+
+Once enabled, a folder named "Q&As from Human Agents" will appear as the first entry in your KB Sources page. This folder contains all auto-generated Q&A entries.
+
+The folder view shows a table with the following columns:
+
+- **Name** — The name of the generated Q&A, along with any KB Tags attached to it.
+- **Human User** — The human agent whose conversation was used to generate the Q&A.
+- **Status** — Either "Pending for Review" or "Reviewed."
+- **Usage Count** — How many times this Q&A has been used by the chatbot.
+- **Updated** — The timestamp of the last update.
+
+The folder status on the KB Sources page will show as "Processing" if there are any Q&As still pending review, or "Enabled" if all Q&As have been reviewed.
+
+### **Toolbar Actions**
+
+At the top of the folder view, you have access to the following tools:
+
+- **Filters** — A Human Agent filter (multi-select) and a Status filter to narrow down the Q&A list.
+- **Search** — A search bar to find Q&As by name.
+- **Mark as Reviewed** — Bulk-approve selected Q&As that are pending review. This button is enabled only when at least one pending Q&A is selected.
+- **Download** — Download selected Q&As. Enabled when at least one Q&A is selected.
+- **Delete** — Remove selected Q&As. Enabled when at least one Q&A is selected.
+
+You can select individual Q&As using the checkbox on each row, or use the header checkbox to select all.
+
+### **Q&A Settings**
+
+Inside the folder, you can access the Q&A Settings panel by clicking the **Q&A Settings** button in the top-right corner. This opens a side panel where you can modify the generation configuration at any time.
+
+The settings panel shows the current configuration, including the selected agents, auto-review toggle, and maximum Q&A limit. An "Enabled" badge is shown in the top-right corner when generation is active.
+
+If generation is currently active, you can adjust the settings and click **Save** to apply changes, or **Stop** to halt Q&A generation. If generation is currently stopped, you will see **Start** and **Cancel** buttons instead.
+
+<Note>
+  Stopping generation does not delete any existing Q&As in the folder. It only pauses the creation of new ones.
+</Note>
+
+# Reviewing Individual Q&As
+
+Clicking on any row in the folder opens a detail popup for that specific Q&A. This popup allows you to review and edit the generated content.
+
+### **Editable Fields**
+
+- **Name** — A short title for the Q&A entry.
+- **Question(s)** — The question or set of questions the Q&A covers.
+- **Answer** — The response the chatbot will use when this Q&A is matched.
+- **Custom Instructions** — Any specific instructions for how the chatbot should use this Q&A.
+- **Details** — Includes KB Tags and a reference link to the source conversation.
+
+### **Review Actions**
+
+When a Q&A is in the "Pending for Review" state, the popup will display:
+
+- **Save for Later** — Saves any edits you make without changing the review status.
+- **Discard** — Permanently deletes the Q&A. A confirmation popup will appear before deletion.
+- **Mark as Approved** — Approves the Q&A, changing its status to "Reviewed" and making it available for the chatbot to use.
+
+Once a Q&A has been reviewed and approved, a **Source** field will be added to its details, showing which human agent's conversation was used to generate it.
+
+# Important Notes
+
+- You cannot manually add Q&As inside the "Q&As from Human Agents" folder. All entries in this folder are auto-generated.
+- The folder can be deleted from the KB Sources page, which will remove all generated Q&As.
+- The download button on the KB Sources page works on this folder and will export all Q&As within it.
+- The source type for this folder is "Q&A," and it will appear when you apply the Q&A filter on the KB Sources page.
+- Generated Q&As are not currently included in the memory and storage system. This is planned for a future phase.
+
+# Best Practices
+
+**Start with Your Best Agents:** Select agents who consistently provide accurate, helpful, and well-structured responses. The quality of generated Q&As depends directly on the quality of the source conversations.
+
+**Use Manual Review Initially:** When first enabling the feature, keep auto-review turned off. This allows you to inspect the quality of generated Q&As and build confidence in the system before enabling auto-review.
+
+**Set a Conservative Q&A Limit:** Begin with a lower limit (e.g., 100–500) and increase it once you are satisfied with the quality and relevance of the generated Q&As.
+
+**Review Regularly:** Check the folder periodically and approve or discard pending Q&As. Letting too many Q&As pile up without review reduces the value of the feature.
+
+**Edit Before Approving:** Use the review popup to refine questions and answers. Remove specific customer details such as names, order IDs, or account numbers so that the Q&A applies broadly to all future users.
