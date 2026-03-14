@@ -17,8 +17,9 @@
             "group": "Get Started",
             "pages": [
               "index",
+              "brand-info",
               "customize-your-robylon-bot",
-              "model-comparison"    
+              "model-comparison"
             ]
           },
           {
@@ -29,6 +30,76 @@
               "integrations/webflow",
               "integrations/wix",
               "integrations/wordpress"
+            ]
+          },
+          {
+            "group": "AI agents",
+            "pages": [
+              "ai-agents/custom-ai-agents",
+              "ai-agents/kb-agent",
+              "ai-agents/triage-agent"
+            ]
+          },
+          {
+            "group": "Data and Integrations",
+            "pages": [
+              "data-and-integrations/api-tools-functions",
+              "data-and-integrations/secrets-keys",
+              "data-and-integrations/variables-intents-entities"
+            ]
+          },
+          {
+            "group": "Knowledge Base",
+            "pages": [
+              "knowledgebase/index",
+              "knowledgebase/managingkb"
+            ]
+          },
+          {
+            "group": "Analytics",
+            "pages": [
+              "analytics"
+            ]
+          },
+          {
+            "group": "AI persona",
+            "pages": [
+              "ai-persona"
+            ]
+          },
+          {
+            "group": "Workflows",
+            "pages": [
+              "product/product",
+              "product/triggers",
+              "product/talk",
+              "product/listen",
+              "product/gen-ai",
+              "product/logic",
+              "product/dev-notes"
+            ]
+          },
+          {
+            "group": "Human Users",
+            "pages": [
+              "human-users/add-human-users",
+              "human-users/agent-status",
+              "human-users/assignment",
+              "human-users/tags-canned"
+            ]
+          },
+          {
+            "group": "Conversation Insights",
+            "pages": [
+              "conversation-insights"
+            ]
+          },
+          {
+            "group": "Channels & Connectors",
+            "pages": [
+              "channels-connectors/channels",
+              "channels-connectors/chatbot-settings",
+              "channels-connectors/voice-settings"
             ]
           }
         ]

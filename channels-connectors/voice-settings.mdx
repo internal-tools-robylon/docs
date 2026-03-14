@@ -1,0 +1,65 @@
+---
+title: "Voice Settings"
+description: "The Voice Settings tab allows you to manage the phone numbers your voice agents use. You can view existing numbers, check providers, and add new ones for inbound or outbound calls."
+sidebarTitle: "Voice Settings"
+---
+
+## Active Phone Numbers
+
+- Displays all **active phone numbers** linked to your voice agents.
+- Shows the **provider** for each number (e.g., Twilio, Exotel).
+- Lets you edit or remove existing numbers as needed.
+
+---
+
+## Add a New Phone Number
+
+<Steps>
+  <Step title="Click Add New Phone Number">
+    Open the **Voice Settings tab** and click **Add New Phone Number**.
+  </Step>
+  <Step title="Select Provider">
+    Choose between **Twilio** or **Exotel** as your provider.
+  </Step>
+  <Step title="Enter Details">
+    Provide the required information for the selected provider.
+  </Step>
+  <Step title="Save">
+    Once saved, the number will appear in the list of active voice numbers.
+  </Step>
+</Steps>
+
+---
+
+## Twilio Configuration
+
+When adding a Twilio number, you must provide:
+
+- **Label** — Name to identify the number
+- **Phone Number** — The actual Twilio number
+- **Account SID** — Twilio account identifier
+- **Auth Token** — Secure token for authentication
+
+---
+
+## Exotel Configuration
+
+When adding an Exotel number, you must provide:
+
+- **Label** — Name to identify the number
+- **Phone Number** — The actual Exotel number
+- **Domain App ID** — Exotel app/domain identifier
+- **Account SID** — Exotel account identifier
+- **API Key** — Key for API authentication
+- **API Token** — Secure token for API authentication
+
+---
+
+## Best Practices
+
+- Store provider credentials securely in **Secrets**.
+- Use clear **labels** for numbers (e.g., _Support Line - India_).
+- Test new numbers with a **sample workflow** before going live.
+- Audit voice numbers periodically to remove unused or inactive ones.
+
+---

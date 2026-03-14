@@ -1,0 +1,100 @@
+---
+title: "Managing Your Knowledge Base"
+sidebarTitle: "Managing Your Knowledge Base"
+description: "Manage sources, tags, usage limits, and activate your KB Agent to deliver accurate, on-brand answers."
+---
+
+import { Accordion, AccordionGroup } from "mintlify/components";
+
+After adding sources, manage them from the **Knowledge** page. You’ll see:
+
+- **Source Name** — file name, Q&A title, or URL for quick identification
+- **Status** — _Processing_ (ingesting) or _Enabled_ (active)
+- **Source Size** — file size
+- **Usage Count** — how often the AI used this source
+- **Updated** — last update time
+
+You can click any source to **edit**, **add/modify KB Tags**, or **preview content**.
+
+<Tip>
+  **Pro tip:** Keep titles consistent (e.g., “Policy • Returns • v2”) so they’re easy to find and maintain.
+</Tip>
+
+---
+
+## KB Tags
+
+**KB Tags** are **key–value pairs** (e.g., `department: billing`, `product: x`, `audience: internal`) that let you **route** and **scope** which sources the AI can use.
+
+**Example:**\
+For billing queries, workflows can be configured to **only search** documents tagged `department: billing`.
+
+<AccordionGroup>
+  <Accordion title="When to use tags">
+    Use tags to separate internal vs external docs, products/SKUs, regions, or compliance levels. This keeps answers relevant and reduces noise.
+  </Accordion>
+  <Accordion title="Best practices">
+    - Standardize keys (e.g., `department`, `product`, `audience`)
+    - Keep values short and predictable (e.g., `billing`, `returns`, `pro`)
+    - Use 1–3 tags per source for clarity
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Account Usage & Limits
+
+Plans include limits on **total sources** and **storage size**.
+
+- Monitor current usage at the top of the **Source** page.
+- If you’re close to limits, plan a cleanup or consider an upgrade.
+
+<Info>
+  **Housekeeping matters:** Archive or disable stale sources to keep the index lean and fast.
+</Info>
+
+---
+
+## Activate with the KB Agent
+
+Open **KB Agent** from the left menu to connect instructions and sources:
+
+1. Add **Custom Instructions** to guide **tone**, **format**, and **decision-making**.
+2. Review the list of **active KB Sources** and confirm the scope aligns with your tags and workflows.
+
+<Info>
+  **Instruction hygiene:** Be explicit about **what to cite**, **what to avoid**, and **how to answer** (bullet points vs paragraphs, add links, etc.).
+</Info>
+
+---
+
+## Q&As and KB Gap
+
+- **QnAs:** Create **canonical** Q&A pairs for high-traffic questions.
+- **KB Gap:** See questions the AI **couldn’t answer** with current sources—then fill those gaps with new docs or Q&As.
+
+<AccordionGroup>
+  <Accordion title="Closing the loop">
+    Review KB Gap weekly, add or tag missing sources, and update instructions if needed. This continuous loop boosts accuracy and deflection.
+  </Accordion>
+  <Accordion title="What makes a strong Q&A?">
+    - One clear question per entry
+    - Short, factual answer with links for depth
+    - Consistent voice and formatting
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Checklist
+
+- Sources added and named consistently
+- Tags applied (department/product/audience)
+- Usage & limits reviewed
+- KB Agent instructions set and tested
+- Q&As created for top queries
+- KB Gap reviewed and actioned weekly
+
+<Check>
+  **Next step:** Test with 10–15 real customer questions and iterate tags/instructions based on results.
+</Check>

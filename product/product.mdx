@@ -1,0 +1,173 @@
+---
+title: "Workflows"
+description: " Design reliable, debuggable AI-powered workflows using Triggers, Talk, Listen, Gen AI, Logic, Dev, and Notes blocks. This guide explains what each block does, when to use it, and shows end‑to‑end patterns."
+---
+
+> Who is this for? Product managers, solutions engineers, and implementers building chat, voice, email, and ticketing automations.
+
+---
+
+## TL;DR
+
+- **Triggers** define **when** an automation starts (a chat opens, a voice call arrives, a ticket is created or updated, or another automation ends).
+- **Talk** sends outputs: chat messages, images, and **emails** (as internal notes, external notes, or customer replies) to the right audiences.
+- **Listen** collects inputs: button choices, text fields, images, and structured **captures** like order IDs or user info.
+- **Gen AI** powers reasoning: an **AI Agent** orchestrates tools; **Generate** composes answers; **Extract** pulls entities.
+- **Logic** gates flow with **Conditions**, **Set variables**, and **Delay** to sequence actions.
+- **Dev** connects systems via **API**, custom **Function** (Python), and **Integrations** (e.g., Google Sheets).
+- **Notes** improve readability and maintenance.
+
+---
+
+## Prerequisites
+
+- A project with at least one **channel** (Chat, Voice, or Email/Tickets)
+- Access to your **ticketing/CRM** sandbox and **API** credentials (if integrating)
+- Test users and **sample tickets/chats**
+
+---
+
+## Quickstart — Your First Resolution Flow
+
+<Steps>
+  <Step title="Pick a Trigger">
+    Choose a **channel-specific trigger**:
+
+    - **Chat**: On chat created / user message / handover from bot
+    - **Voice**: On inbound call / scheduled outbound callback
+    - **Email/Ticket**: On ticket created / reopened / updated / automation-ended
+  </Step>
+  <Step title="Collect context (Listen)">
+    Add **Capture** to parse essentials (e.g., `order_id`, `email`). Use **Buttons** for guided choices (status, returns, billing). Allow **Upload image** when proofs (POD, receipt, damage photos) are needed.
+  </Step>
+  <Step title="Reason (Gen AI)">
+    Add one **AI Agent** per workflow. Bind tools: **Generate** for responses, **Extract** for entities, **KB** and **APIs** for facts.
+  </Step>
+  <Step title="Branch (Logic)">
+    Use **Conditions** to separate happy vs. exception paths. **Set variables** for flags; **Delay** to wait for downstream systems.
+  </Step>
+  <Step title="Act (Dev)">
+    Call **API** to fetch/update records; use **Function** for validations (e.g., transaction hash). Read from **Integrations** like Sheets.
+  </Step>
+  <Step title="Respond (Talk)">
+    Send a **Message** in chat or a structured **Email**: internal note for debug, external note for sandbox tests, or **reply** to the customer when live.
+  </Step>
+  <Step title="Instrument & finish">
+    Add **Notes** for maintainers. Emit debug **Talk → internal notes**. Close the loop or **Trigger** a follow‑on automation.
+  </Step>
+</Steps>
+
+<Card title="Triggers" icon="play" href="/product/triggers">
+  Define when an automation starts or chains into another workflow.
+</Card>
+
+<Card title="Talk" icon="text" href="/product/talk">
+  Send outputs like messages, emails, or debug notes to the right audience.
+</Card>
+
+<Card title="Listen" icon="ear" href="/product/listen">
+  Capture user inputs, intents, and data from systems or APIs.
+</Card>
+
+<Card title="Gen AI" icon="sparkles" href="/product/gen-ai">
+  Power workflows with AI agents that generate, extract, and reason.
+</Card>
+
+<Card title="Logic" icon="split" href="/product/logic">
+  Control workflow decisions with conditions, variables, and delays.
+</Card>
+
+<Card title="Dev" icon="code" href="/product/dev-notes">
+  Extend workflows with APIs, Python functions, integrations, and notes.
+</Card>
+
+## Patterns
+
+### 1) Ticket Created → Verify → Respond
+
+- **Trigger**: Ticket created
+- **Listen**: Capture `intent`, `order_id`
+- **Dev/API**: Fetch order
+- **Logic**: Branch on status; set variables
+- **Gen AI/Generate**: Compose resolution with policy guardrails
+- **Talk/Email**: Reply to ticket; log internal note
+
+### 2) Chat Handover → Diagnose → Escalate
+
+- **Trigger**: Chat handed over from bot
+- **Listen**: Buttons for _billing_/_returns_/_technical_
+- **Gen AI/Extract**: Pull entities; **API** to CRM
+- **Logic**: If high‑value, escalate; else self‑serve path
+- **Talk/Message**: Provide next steps or connect human
+
+### 3) Voice Inbound → Authenticate → Callback
+
+- **Trigger**: Inbound call
+- **Listen**: Capture account digits via DTMF
+- **Dev/Function**: Validate ID
+- **Logic/Delay**: Wait 5s for CRM lock release
+- **Talk**: Confirm and schedule **outbound** callback
+
+---
+
+## Production Checklist
+
+- One **AI Agent** per workflow
+- Clear tool contracts; consistent error shapes
+- PII handling: mask in logs/internal notes
+- Guardrails: KB only vs. model‑free‑form
+- Observability: internal notes + analytics events
+- Rollout: canary orgs, kill‑switch, monthly AI cap
+
+---
+
+## Troubleshooting
+
+<Accordion title="Emails are visible to customers unexpectedly">
+  Check **Email** mode. Use **Internal note** for debug; **External note** to post to the ticket without emailing the customer; **Reply to ticket** for customer‑facing.
+</Accordion>
+
+<Accordion title="Capture misses order IDs">
+  Add regex patterns and enable **Extract** fallback. Offer **Buttons** for guided flows when confidence is low.
+</Accordion>
+
+<Accordion title="API flakiness or stale data">
+  Add **Delay** after updates; implement retries with backoff; surface failures via **Internal note**.
+</Accordion>
+
+---
+
+## FAQs
+
+**How many AI Agents can I add?**  One per workflow. Split flows if you need multiple agents.
+
+**When should I use External note vs Reply?**  Use **External note** during UAT so staff can see drafts inside the ticketing tool. Switch to **Reply** when confident.
+
+**Can I start an automation from another automation?**  Yes—use **automation‑ended** triggers to chain flows.
+
+---
+
+## Reference
+
+### Block Matrix
+
+| Block                 | Purpose             | Example Use                         | Notes                       |
+| --------------------- | ------------------- | ----------------------------------- | --------------------------- |
+| Trigger               | Start flow on event | Ticket created; Chat handed over    | Channel‑specific            |
+| Talk → Message        | Chat output         | Status update; next steps           | Use for customer replies    |
+| Talk → Email          | Ticket output       | Internal note; External note; Reply | Choose visibility correctly |
+| Listen → Buttons      | Input choices       | Returns / Billing / Tech            | Reduces ambiguity           |
+| Listen → Capture      | Entity extraction   | order_id, email, intent             | Can pair with **Extract**   |
+| Listen → Upload image | Collect proofs      | Damage photos, receipts             | Validate before action      |
+| Gen AI → AI Agent     | Orchestrator        | Calls tools & KB                    | One per workflow            |
+| Gen AI → Generate     | Compose answer      | Policy‑safe response                | Add evaluation prompts      |
+| Gen AI → Extract      | Entities            | Name, ID, amounts                   | Use for fallback parse      |
+| Logic → Conditions    | Branching           | Eligibility, flags                  | Keep branches shallow       |
+| Logic → Set variables | State mgmt          | Set `is_vip`                        | Trace changes via notes     |
+| Logic → Delay         | Sequencing          | Wait for sync                       | Keep short & purposeful     |
+| Dev → API             | System calls        | CRM, OMS, Payments                  | Standardize headers/errors  |
+| Dev → Function        | Custom code         | Validate hash                       | Python runtime              |
+| Dev → Integration     | 3rd‑party data      | Google Sheets                       | Good for ops teams          |
+| Notes                 | Maintainability     | Explain rationale                   | Required in long flows      |
+
+---

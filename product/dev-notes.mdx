@@ -1,0 +1,56 @@
+---
+title: "Dev Components"
+description: "Dev components bring development and engineering flexibility into workflows. They allow you to call APIs, run Python functions, connect integrations, and annotate workflows with notes."
+---
+
+### API
+
+The **API block** sets up external API calls inside workflows.
+
+- Pulls or pushes data to a client’s database or third-party service.
+- Can be invoked directly or by an **AI agent** when additional context is required.
+- Example uses:
+  - Check a **user’s subscription status**
+  - Retrieve **order details** from an ERP
+  - Update a **ticket property** in a helpdesk system
+
+---
+
+### Function
+
+The **Function block** allows embedding custom Python code.
+
+- Accepts **specific inputs** and returns **structured outputs**.
+- Highly versatile for validation, transformation, or computation.
+- Example uses:
+  - Validate **transaction hashes**
+  - Check if a **URL is valid**
+  - Normalize data (e.g., phone numbers, dates)
+
+<Tip>
+  Keep functions **small and modular**. Promote frequently used logic into a **Tool** for reuse across workflows.
+</Tip>
+
+---
+
+### Integration
+
+The **Integration block** connects to third-party apps and fetches structured data.
+
+- Common integrations: **Google Sheets**, **CRMs**, **Payment processors**
+- Example uses:
+  - Read/write rows in a Google Sheet
+  - Pull customer info from Salesforce
+  - Fetch product catalog data from Shopify
+
+---
+
+### Notes
+
+The **Notes block** adds inline documentation to a workflow.
+
+- Helps explain **why a step exists** or what a **condition means**.
+- Improves collaboration by making workflows easier to audit and maintain.
+- Notes are **non-executable** and purely for context.
+
+---

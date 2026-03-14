@@ -1,0 +1,48 @@
+---
+title: "Gen AI Components"
+description: "Gen AI components allow you to build intelligent automation blocks powered by AI. They use prompts, knowledge bases, and tools to generate, evaluate, or extract information from conversations."
+---
+
+### AI Agent
+
+The **AI Agent block** creates a dedicated AI agent within a workflow.
+
+- **One agent per workflow** is allowed.
+- The agent is the **core driver** of automation, responsible for handling logic and conversations.
+- Agents can:
+  - **Call tools** (e.g., APIs, functions)
+  - **Generate replies** for customers
+  - **Fetch information** from the knowledge base
+
+<Tip>
+  Define clear **instructions and goals** for each AI agent to avoid overlap or misrouting across workflows.
+</Tip>
+
+---
+
+### Generate
+
+The **Generate block** uses AI to create content or validate responses.\
+Common uses:
+
+- Generate a **reply** based on inputs and KB context
+- **Evaluate** if a user’s query has been fully answered
+- Summarize long responses into concise answers
+- Provide **alternatives** when one reply is insufficient
+
+---
+
+### Extract
+
+The **Extract block** uses AI to pull structured details out of user queries, similar to **Capture**, but more flexible.\
+Examples:
+
+- Extracting an **order ID** from a free-form message
+- Pulling a **date** or **location** from a user’s text
+- Identifying **entities** like product names or account numbers
+
+<Note>
+  Use **Extract** when inputs are **unstructured or varied**. Use **Capture** when the format is **predictable** (e.g., fixed ID patterns).
+</Note>
+
+---

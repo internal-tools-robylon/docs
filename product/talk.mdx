@@ -1,0 +1,54 @@
+---
+title: "Talk Components"
+description: "Talk components are used to output information in workflows. They function like print statements in programming—controlling what is displayed, where it is displayed, and to whom."
+---
+
+Messages can be made visible to:
+
+- **Only Robylon** (private debug/test)
+- **Robylon + Client** (internal collaboration)
+- **Robylon + Client + Customer** (live responses)
+
+They are essential for sending replies, setting up debug logs, or testing messages privately before going live.
+
+---
+
+### Message
+
+The **Message box** sends chat messages.
+
+- **Customer-visible replies** → Provide answers in real-time chats.
+- **Internal debug/test** → Validate how the workflow responds without exposing to customers.
+
+---
+
+### Image
+
+The **Image type** allows chatbots to **receive images from users** for analysis or processing.\
+Typical uses:
+
+- Customer uploads **ID proof** for KYC.
+- User shares **screenshots** of errors.
+- Agents analyze **product photos** for returns.
+
+---
+
+### Email
+
+The **Email type** is used for sending structured responses or notes within the client’s ticketing system. It supports three modes:
+
+- **Internal Note**
+  - Visible only to Robylon users.
+  - Best for debugging messages, agent collaboration, or logging workflow steps.
+- **External Note**
+  - Visible on the client’s ticketing system (e.g., Zendesk) but **not** visible to the customer.
+  - Useful for **testing replies** before exposing them live.
+- **Reply to Ticket**
+  - Sent directly to the **customer**.
+  - Used when workflows are live and customer-ready.
+
+<Tip>
+  Start with **internal notes** for safe testing, then move to **external notes**, and finally **reply-to-ticket** when confident in workflow accuracy.
+</Tip>
+
+---
