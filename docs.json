@@ -19,7 +19,17 @@
               "index",
               "brand-info",
               "model-comparison",
-              "languages"
+              "languages",
+              "ai-persona"
+            ]
+          },
+          {
+            "group": "Handling live agents",
+            "pages": [
+              "human-users/add-human-users",
+              "human-users/agent-status",
+              "human-users/assignment",
+              "human-users/tags-canned"
             ]
           },
           {
@@ -43,9 +53,10 @@
             ]
           },
           {
-            "group": "Making the chatbot go LIVE",
+            "group": "Making the chatbot go Live",
             "pages": [
               "customize-your-robylon-bot",
+              "channels-connectors/chatbot-settings",
               "knowledgebase/suggested-messages",
               {
                 "group": "Chatbot Installation",
@@ -60,35 +71,40 @@
             ]
           },
           {
-            "group": "AI agents",
+            "group": "Start voice calling",
             "pages": [
-              "ai-agents/custom-ai-agents",
-              "ai-agents/kb-agent",
-              "ai-agents/triage-agent"
+              "channels-connectors/voice-settings"
             ]
           },
           {
-            "group": "Data and Integrations",
+            "group": "Connecting other channels",
             "pages": [
-              "data-and-integrations/api-tools-functions",
-              "data-and-integrations/secrets-keys",
-              "data-and-integrations/variables-intents-entities"
+              "channels-connectors/channels"
             ]
           },
           {
-            "group": "Analytics",
+            "group": "Building an AI agent",
             "pages": [
-              "analytics"
+              {
+                "group": "Types of AI agents",
+                "pages": [
+                  "ai-agents/custom-ai-agents",
+                  "ai-agents/kb-agent",
+                  "ai-agents/triage-agent"
+                ]
+              },
+              {
+                "group": "Data and Integrations",
+                "pages": [
+                  "data-and-integrations/api-tools-functions",
+                  "data-and-integrations/secrets-keys",
+                  "data-and-integrations/variables-intents-entities"
+                ]
+              }
             ]
           },
           {
-            "group": "AI persona",
-            "pages": [
-              "ai-persona"
-            ]
-          },
-          {
-            "group": "Workflows",
+            "group": "Creating a Workflow",
             "pages": [
               "product/product",
               "product/triggers",
@@ -100,26 +116,15 @@
             ]
           },
           {
-            "group": "Human Users",
+            "group": "Getting an idea of the traffic on the platform",
             "pages": [
-              "human-users/add-human-users",
-              "human-users/agent-status",
-              "human-users/assignment",
-              "human-users/tags-canned"
+              "analytics"
             ]
           },
           {
-            "group": "Conversation Insights",
+            "group": "Improving your AI agent",
             "pages": [
               "conversation-insights"
-            ]
-          },
-          {
-            "group": "Channels & Connectors",
-            "pages": [
-              "channels-connectors/channels",
-              "channels-connectors/chatbot-settings",
-              "channels-connectors/voice-settings"
             ]
           }
         ]
