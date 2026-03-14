@@ -14,23 +14,49 @@
         "tab": "User Guides",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Getting started with Robylon",
             "pages": [
               "index",
               "brand-info",
-              "customize-your-robylon-bot",
               "model-comparison",
               "languages"
             ]
           },
           {
-            "group": "Integrations",
+            "group": "Setting up your Knowledge Base",
             "pages": [
-              "integrations/bubble",
-              "integrations/framer",
-              "integrations/webflow",
-              "integrations/wix",
-              "integrations/wordpress"
+              {
+                "group": "Knowledge Base Sources",
+                "pages": [
+                  "knowledgebase/index",
+                  "knowledgebase/kb-from-humans"
+                ]
+              },
+              "knowledgebase/custom-kb-responses",
+              {
+                "group": "Knowledge Base Improvements",
+                "pages": [
+                  "knowledgebase/click-to-improve"
+                ]
+              },
+              "knowledgebase/managingkb"
+            ]
+          },
+          {
+            "group": "Making the chatbot go LIVE",
+            "pages": [
+              "customize-your-robylon-bot",
+              "knowledgebase/suggested-messages",
+              {
+                "group": "Chatbot Installation",
+                "pages": [
+                  "integrations/bubble",
+                  "integrations/framer",
+                  "integrations/webflow",
+                  "integrations/wix",
+                  "integrations/wordpress"
+                ]
+              }
             ]
           },
           {
@@ -47,14 +73,6 @@
               "data-and-integrations/api-tools-functions",
               "data-and-integrations/secrets-keys",
               "data-and-integrations/variables-intents-entities"
-            ]
-          },
-          {
-            "group": "Knowledge Base",
-            "pages": [
-              "knowledgebase/index",
-              "knowledgebase/managingkb",
-              "knowledgebase/kb-from-humans"
             ]
           },
           {
