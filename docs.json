@@ -53,7 +53,8 @@
             "group": "Knowledge Base",
             "pages": [
               "knowledgebase/index",
-              "knowledgebase/managingkb"
+              "knowledgebase/managingkb",
+              "knowledgebase/kb-from-humans"
             ]
           },
           {
