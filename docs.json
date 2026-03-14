@@ -19,7 +19,17 @@
               "index",
               "brand-info",
               "model-comparison",
-              "languages"
+              "languages",
+              "ai-persona"
+            ]
+          },
+          {
+            "group": "Handling live agents",
+            "pages": [
+              "human-users/add-human-users",
+              "human-users/agent-status",
+              "human-users/assignment",
+              "human-users/tags-canned"
             ]
           },
           {
@@ -43,7 +53,7 @@
             ]
           },
           {
-            "group": "Making the chatbot go LIVE",
+            "group": "Making the chatbot go Live",
             "pages": [
               "customize-your-robylon-bot",
               "channels-connectors/chatbot-settings",
@@ -109,21 +119,6 @@
             "group": "Getting an idea of the traffic on the platform",
             "pages": [
               "analytics"
-            ]
-          },
-          {
-            "group": "AI persona",
-            "pages": [
-              "ai-persona"
-            ]
-          },
-          {
-            "group": "Human Users",
-            "pages": [
-              "human-users/add-human-users",
-              "human-users/agent-status",
-              "human-users/assignment",
-              "human-users/tags-canned"
             ]
           },
           {
