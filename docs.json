@@ -46,7 +46,8 @@
               {
                 "group": "Knowledge Base Improvements",
                 "pages": [
-                  "knowledgebase/click-to-improve"
+                  "knowledgebase/click-to-improve",
+                  "knowledgebase/untitled-page"
                 ]
               },
               "knowledgebase/managingkb"

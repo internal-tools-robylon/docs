@@ -1,0 +1,128 @@
+---
+title: "Bulk Testing"
+---
+
+The **Bulk** **Testing** feature lets you validate your Knowledge Base at scale. Upload a list of questions as a CSV, let the KB agent generate answers automatically, and then review each response for accuracy — all from a single interface inside the Knowledge Base.
+
+# Overview
+
+Instead of manually testing your chatbot one question at a time, KB Testing allows you to:
+
+- **Bulk-test questions:** Upload dozens or hundreds of questions in one go.
+- **Auto-generate answers:** The system runs each question through the KB agent and records the AI's response.
+- **Review and grade:** Inspect each answer, check the sources used, and mark it as positive or negative.
+- **Export results:** Download the full test as a CSV with questions, answers, grades, and notes.
+
+# Accessing KB Testing
+
+1. Log in to your Robylon dashboard.
+2. From the left sidebar, navigate to **Knowledge Base**.
+3. Click the **Testing** tab below the KB Gap section.
+
+The Testing page displays all your tests in a list view with the following columns:
+
+- **Name** — The name of the test (clickable to open the individual test view).
+- **Total Questions** — The number of questions in the test.
+- **Status** — The current state of the test: **Running**, **Partially Reviewed**, or **Reviewed**.
+- **Run Date** — The date and time the test was created, along with who ran it.
+
+At the top of the page, you will find a **Status** filter dropdown, a **Search** bar to find tests by name, and action buttons for **Download** and **Delete** (enabled when one or more tests are selected).
+
+# Creating a Test
+
+### **1. Open the Create Test Modal**
+
+Click the **\+ Create Test** button in the top-right corner of the Testing page.
+
+### **2. Enter a Test Name**
+
+Provide a name for your test in the **Test Name** field. This is a required field.
+
+### **3. Upload Your Questions CSV**
+
+Upload a CSV file containing the questions you want to test. You can drag and drop the file or click **Upload CSV** to browse your files.
+
+The CSV must contain a **Question** column header. Click the **Download Sample CSV** link to get a template with the correct format.
+
+### **4. Start the Test**
+
+Click **Start Test** to begin. The modal closes and your test appears in the list with a **Running** status. The KB agent processes each question in the background and the status updates automatically as answers are generated.
+
+# Reviewing a Test
+
+Click on any test name in the list to open the individual test view. This page contains the following sections:
+
+### **Stats Widget**
+
+A summary bar at the top shows four metrics:
+
+- **Total Questions** — The total number of questions in the test.
+- **Positive Reviews** — The count of answers graded as positive (shown in green).
+- **Negative Reviews** — The count of answers graded as negative (shown in red).
+- **Pending Reviews** — The count of answers not yet reviewed (shown in orange).
+
+### **Q&A List**
+
+Below the stats widget, a table lists every question in the test with the following columns:
+
+- **Question** — The full question text (clickable to open the review slider).
+- **Answer Status** — Shows whether the KB agent successfully generated an answer.
+- **Answer Rating** — The current feedback status: **Pending**, **Good**, **Acceptable**, or **Bad**.
+
+You can filter the list using the **Answer Status** and **Rating** dropdowns, or search for specific questions using the search bar.
+
+# Evaluating Individual Answers
+
+Click on any row in the Q&A list to open the **Evaluate Answer** slider on the right side of the screen. The slider contains:
+
+### **Question and Answer**
+
+The question is displayed at the top, followed by the AI-generated answer. Both fields are read-only.
+
+### **Cited KB Source**
+
+An expandable accordion showing the KB sources the AI used to generate the answer. This works the same way as the Click to Improve feature — you can see exactly which documents or text chunks were referenced.
+
+### **Review Answer**
+
+Grade the answer using one of the available rating options: **Good**, **Acceptable**, or **Bad**.
+
+If you select **Bad**, additional options appear for tagging the reason for failure: **Hallucination**, **Incomplete**, **Wrong source**, or **Other**. At least one reason must be selected.
+
+An **Add internal note** text area is always available for adding free-form feedback regardless of the grade.
+
+Click **Save** to record your review, or **Cancel** to discard changes and close the slider.
+
+# Bulk Actions
+
+To speed up the review process, you can select multiple Q&As using the checkboxes and apply feedback in bulk:
+
+- **Mark as Positive** — Applies a positive rating to all selected Q&As at once.
+- **Mark as Negative** — Applies a negative rating to all selected Q&As at once.
+
+Bulk actions update the rating and timestamp for all affected Q&As immediately without opening the review slider.
+
+# Downloading Test Results
+
+You can download test results in two ways:
+
+- **From the Testing page:** Select one or more tests using the checkboxes and click the **Download** icon. Multiple tests are packaged into a zip file.
+- **From the individual test view:** Click the **Download** icon in the top-right corner of the test page.
+
+The exported CSV includes the following columns: **Question**, **Answer**, **Answer grading**, **Reasons for negative grading**, and **Additional notes**. All Q&As are included regardless of their review status.
+
+# Deleting Tests
+
+Select one or more tests from the list and click the **Delete** icon. A confirmation popup will appear before the tests are permanently removed.
+
+You can also delete an individual test from within the test view using the **Delete** icon in the top-right corner.
+
+# Best Practices
+
+**Start with a focused question set:** Begin with 50–100 questions covering your most common customer queries. This gives you a manageable first batch to review and helps you quickly identify gaps in your Knowledge Base.
+
+**Use the Sample CSV template:** Download the sample CSV to ensure your file has the correct format before uploading. This avoids upload errors and failed tests.
+
+**Review negative answers carefully:** When an answer is graded as negative, check the Cited KB Source section to understand why. If the wrong source was used, consider improving your KB content or adding a dedicated Q&A for that topic.
+
+**Export and share results:** Download completed tests and share the CSV with your team to collaboratively identify patterns in incorrect answers and prioritize KB improvements.
